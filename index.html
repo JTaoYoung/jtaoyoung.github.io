@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JTAO YOUNG · Portfolio</title>
+    <meta name="description" content="Bright cinematic portfolio with dramatic lighting and filmic visuals." />
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f5f1e8;
+        --bg-soft: #fffaf0;
+        --card: rgba(255,255,255,.72);
+        --line: rgba(19, 25, 38, .12);
+        --text: #141821;
+        --muted: rgba(20,24,33,.68);
+        --gold: #d8a84a;
+        --blue: #7ca7ff;
+        --shadow: 0 28px 80px rgba(38, 29, 10, .18);
+      }
+      *{box-sizing:border-box}
+      html,body{margin:0;min-height:100%;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:
+        radial-gradient(circle at 18% 18%, rgba(255,255,255,.95) 0%, rgba(255,248,226,.76) 14%, transparent 36%),
+        radial-gradient(circle at 82% 10%, rgba(216,168,74,.42) 0%, transparent 22%),
+        radial-gradient(circle at 68% 78%, rgba(124,167,255,.24) 0%, transparent 26%),
+        linear-gradient(135deg, #fffdf8 0%, #f4ebd6 46%, #fff8ed 100%);color:var(--text);overflow-x:hidden}
+      body::before{content:"";position:fixed;inset:0;pointer-events:none;background:
+        radial-gradient(circle at 50% 0%, rgba(255,255,255,.9), transparent 30%),
+        linear-gradient(110deg, transparent 0 38%, rgba(255,255,255,.22) 45%, transparent 52%),
+        radial-gradient(circle at 20% 80%, rgba(0,0,0,.08), transparent 24%),
+        radial-gradient(circle at 82% 68%, rgba(0,0,0,.06), transparent 20%);
+        mix-blend-mode:multiply}
+      .wrap{width:min(1180px,calc(100% - 32px));margin:0 auto;position:relative}
+      header{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);transition:.25s ease;border-bottom:1px solid transparent}
+      header.scrolled{background:rgba(255,250,240,.72);border-bottom-color:var(--line);box-shadow:0 10px 30px rgba(0,0,0,.06)}
+      .nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0;gap:18px}
+      .brand{display:flex;flex-direction:column;gap:4px}
+      .brand strong{letter-spacing:.18em;text-transform:uppercase;font-size:12px}
+      .brand span{font-size:13px;color:var(--muted)}
+      .pill{padding:10px 14px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.48);box-shadow:0 10px 28px rgba(0,0,0,.05)}
+      .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:end;padding:64px 0 28px}
+      .eyebrow{display:inline-flex;gap:8px;align-items:center;padding:9px 12px;border-radius:999px;background:rgba(255,255,255,.58);border:1px solid var(--line);box-shadow:var(--shadow);font-size:13px;color:var(--muted)}
+      .dot{width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#fff1b0);box-shadow:0 0 0 8px rgba(216,168,74,.16)}
+      h1{margin:18px 0 16px;font-size:clamp(46px,8.8vw,96px);line-height:.9;letter-spacing:-.07em;max-width:9ch}
+      .hero p{max-width:60ch;margin:0;color:var(--muted);font-size:18px;line-height:1.8}
+      .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+      .btn{padding:13px 18px;border-radius:14px;text-decoration:none;border:1px solid var(--line);color:var(--text);background:rgba(255,255,255,.55);transition:transform .22s ease,box-shadow .22s ease,background .22s ease}
+      .btn:hover{transform:translateY(-2px);box-shadow:0 18px 34px rgba(0,0,0,.08)}
+      .btn.primary{background:linear-gradient(135deg,#111827,#3b4a65);color:#fff;border-color:transparent}
+      .hero-visual{position:relative;min-height:540px;border-radius:36px;overflow:hidden;background:
+        radial-gradient(circle at 30% 22%, rgba(255,255,255,.98) 0%, rgba(255,244,219,.88) 18%, transparent 35%),
+        radial-gradient(circle at 72% 26%, rgba(216,168,74,.65) 0%, transparent 23%),
+        radial-gradient(circle at 48% 66%, rgba(124,167,255,.35) 0%, transparent 30%),
+        linear-gradient(160deg,#fffaf1 0%,#f1dfb5 46%,#d5b677 100%);
+        box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.52)}
+      .beam{position:absolute;inset:-10% -20%;background:linear-gradient(110deg,transparent 42%, rgba(255,255,255,.72) 50%, transparent 58%);transform:rotate(-8deg);filter:blur(12px)}
+      .orb{position:absolute;border-radius:50%;filter:blur(2px);mix-blend-mode:screen}
+      .orb.one{width:220px;height:220px;left:-20px;top:54px;background:radial-gradient(circle, rgba(255,255,255,.96), rgba(255,219,155,.28) 50%, transparent 72%)}
+      .orb.two{width:300px;height:300px;right:-42px;top:120px;background:radial-gradient(circle, rgba(255,255,255,.76), rgba(124,167,255,.18) 48%, transparent 74%)}
+      .frame{position:absolute;inset:40px;border-radius:28px;border:1px solid rgba(255,255,255,.36);background:linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,.04));backdrop-filter:blur(4px);display:grid;place-items:end start;padding:24px;overflow:hidden}
+      .frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 20%, rgba(0,0,0,.18) 100%)}
+      .frame h2,.frame p{position:relative;z-index:1;margin:0}
+      .frame h2{font-size:34px;letter-spacing:-.05em}
+      .frame p{color:rgba(20,24,33,.76);max-width:22ch;margin-top:10px}
+      .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:28px 0 12px}
+      .stat{padding:18px;border-radius:20px;background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);backdrop-filter:blur(16px)}
+      .stat strong{display:block;font-size:30px;margin-bottom:6px}
+      .stat span{color:var(--muted);font-size:13px}
+      .section{padding:28px 0 70px}
+      .section-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:18px}
+      .section-head h3{margin:0;font-size:28px;letter-spacing:-.04em}
+      .section-head p{margin:8px 0 0;color:var(--muted)}
+      .filters{display:flex;flex-wrap:wrap;gap:10px}
+      .filter{cursor:pointer;border-radius:999px;padding:10px 14px;border:1px solid var(--line);background:rgba(255,255,255,.55);color:var(--text)}
+      .filter.active{background:#111827;color:#fff;border-color:#111827}
+      .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+      .card{overflow:hidden;border-radius:26px;background:rgba(255,255,255,.62);border:1px solid var(--line);box-shadow:var(--shadow);transform:translateY(10px);opacity:0;transition:.65s ease;cursor:pointer}
+      .card.in{transform:none;opacity:1}
+      .poster{aspect-ratio:4/5;position:relative;overflow:hidden;background:linear-gradient(135deg,#f9ead2,#fffdf8 52%,#cad7ff)}
+      .poster::before{content:"";position:absolute;inset:-18%;background:radial-gradient(circle at 28% 26%, rgba(255,255,255,.95), transparent 22%), radial-gradient(circle at 70% 40%, rgba(216,168,74,.42), transparent 18%), radial-gradient(circle at 50% 75%, rgba(0,0,0,.18), transparent 26%);filter:blur(2px)}
+      .poster::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, transparent 0%, rgba(255,255,255,.12) 38%, rgba(17,24,39,.62) 100%)}
+      .card:nth-child(3n+1) .poster{background:linear-gradient(160deg,#fff8ea,#f7dfaf 52%,#b9c9ff)}
+      .card:nth-child(3n+2) .poster{background:linear-gradient(160deg,#fefefe,#f1e0be 48%,#d6c0ff)}
+      .card:nth-child(3n+3) .poster{background:linear-gradient(160deg,#fff9ef,#e6c68a 50%,#9fb6ff)}
+      .card-body{padding:16px 16px 18px}
+      .meta{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:13px;margin-bottom:10px}
+      .card h4{margin:0 0 8px;font-size:20px;letter-spacing:-.03em}
+      .card p{margin:0;color:var(--muted);line-height:1.65}
+      .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+      .tag{padding:7px 10px;border-radius:999px;background:rgba(17,24,39,.06);font-size:12px;color:rgba(17,24,39,.72)}
+      .card:hover{transform:translateY(-6px)}
+      .empty{padding:30px;border:1px dashed var(--line);border-radius:24px;background:rgba(255,255,255,.4);color:var(--muted);text-align:center}
+      .about{padding:24px;border-radius:28px;background:rgba(255,255,255,.6);border:1px solid var(--line);box-shadow:var(--shadow)}
+      footer{padding:10px 0 40px;color:var(--muted);font-size:13px}
+      dialog{width:min(1080px,calc(100% - 24px));border:1px solid var(--line);border-radius:24px;background:rgba(255,250,242,.98);box-shadow:var(--shadow);color:var(--text)}
+      dialog::backdrop{background:rgba(10,10,12,.42);backdrop-filter:blur(8px)}
+      .player-head{display:flex;justify-content:space-between;gap:14px;align-items:start;margin-bottom:14px}
+      .player-head h4{margin:0;font-size:24px}
+      .player-stage{aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:#000}
+      .player-stage video{width:100%;height:100%;display:block;background:#000}
+      .close{border:0;border-radius:12px;padding:10px 12px;background:#111827;color:#fff;cursor:pointer}
+      @media (max-width: 920px){.hero{grid-template-columns:1fr;padding-top:34px}.hero-visual{min-height:360px}.stats{grid-template-columns:1fr}.section-head{flex-direction:column;align-items:start}}
+      @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.card{opacity:1;transform:none}}
+    </style>
+  </head>
+  <body>
+    <header id="header">
+      <div class="wrap nav">
+        <div class="brand">
+          <strong>JTaoYoung</strong>
+          <span>Film light / bright mood / visual portfolio</span>
+        </div>
+        <div class="pill" id="status">Curating the gallery…</div>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="hero">
+        <div>
+          <span class="eyebrow"><i class="dot"></i>Bright cinematic portfolio</span>
+          <h1>画面明亮，却像电影一样有重量</h1>
+          <p>这是一个偏电影感的作品集主页：大面积高光、戏剧性阴影、带有金色阳光感的视觉层次，以及足够克制的内容呈现。适合摄影、导演、视觉设计、概念片与品牌影像展示。</p>
+          <div class="actions">
+            <a class="btn primary" href="#works">View Works</a>
+            <a class="btn" href="#about">About</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="beam"></div>
+          <div class="orb one"></div>
+          <div class="orb two"></div>
+          <div class="frame">
+            <div>
+              <h2>Light<br />as story.</h2>
+              <p>Bright palette, dramatic contrast, soft motion, clean editorial structure.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats" aria-label="Overview stats">
+        <div class="stat"><strong id="count">0</strong><span>精选作品</span></div>
+        <div class="stat"><strong id="cats">0</strong><span>作品分类</span></div>
+        <div class="stat"><strong id="updated">Now</strong><span>页面状态</span></div>
+      </section>
+
+      <section class="section" id="works">
+        <div class="section-head">
+          <div>
+            <h3>Selected Works</h3>
+            <p>点击卡片可查看大图或播放视频。</p>
+          </div>
+          <div class="filters" id="filters"></div>
+        </div>
+        <div class="grid" id="grid"></div>
+        <div class="empty" id="empty" hidden>还没有内容，下面的示例数据可以直接替换成你的作品。</div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="section-head">
+          <div>
+            <h3>About</h3>
+            <p>明亮色调 + 电影级光影 + 极简叙事</p>
+          </div>
+        </div>
+        <div class="about">
+          <p style="margin:0;color:var(--muted);line-height:1.85">这个主页不依赖飞书，内容直接写入静态数据，适合快速上线到 GitHub Pages。结构包含首屏 Hero、数据统计、筛选作品网格、以及全屏播放器。你之后只需要把示例内容替换成自己的作品信息即可。</p>
+        </div>
+      </section>
+    </main>
+
+    <dialog id="playerDialog">
+      <div class="player-head">
+        <div>
+          <h4 id="playerTitle">Preview</h4>
+          <p id="playerMeta" style="margin:8px 0 0;color:var(--muted)"></p>
+        </div>
+        <button class="close" id="closeDialog">Close</button>
+      </div>
+      <div class="player-stage">
+        <video id="player" controls playsinline></video>
+      </div>
+    </dialog>
+
+    <footer class="wrap">JTAO YOUNG · bright cinematic portfolio.</footer>
+
+    <script>
+      const works = [
+        { title: "Sunlit Silence", category: "Brand Film", year: "2026", duration: "01:12", desc: "High-key visuals with painterly highlights and soft shadows.", color: "Golden hour", video: "" },
+        { title: "Glass Horizon", category: "Commercial", year: "2026", duration: "00:48", desc: "Clean compositions, reflective surfaces, and precise contrast.", color: "Editorial frame", video: "" },
+        { title: "White Fire", category: "Motion Design", year: "2025", duration: "00:36", desc: "Bright backgrounds with dramatic directional lighting.", color: "Solar flare", video: "" },
+        { title: "After Rain", category: "Short Film", year: "2025", duration: "02:04", desc: "Soft luminosity meeting deep cinematic shadow falloff.", color: "Atmospheric tone", video: "" },
+        { title: "Noon Ritual", category: "Photography", year: "2024", duration: "Series", desc: "A warm, luminous sequence built around contrast and silence.", color: "Light study", video: "" },
+        { title: "Prism Walk", category: "Visual Essay", year: "2024", duration: "01:03", desc: "Intense bloom, balanced symmetry, and filmic pacing.", color: "Prismatic glow", video: "" }
+      ];
+
+      const state = { category: 'All' };
+      const grid = document.getElementById('grid');
+      const filters = document.getElementById('filters');
+      const empty = document.getElementById('empty');
+      const status = document.getElementById('status');
+      const count = document.getElementById('count');
+      const cats = document.getElementById('cats');
+      const updated = document.getElementById('updated');
+      const header = document.getElementById('header');
+      const dialog = document.getElementById('playerDialog');
+      const player = document.getElementById('player');
+      const playerTitle = document.getElementById('playerTitle');
+      const playerMeta = document.getElementById('playerMeta');
+
+      const categories = ['All', ...new Set(works.map(item => item.category))];
+      count.textContent = works.length;
+      cats.textContent = categories.length - 1;
+      updated.textContent = 'Ready';
+
+      window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 8), { passive: true });
+
+      function renderFilters() {
+        filters.innerHTML = categories.map(cat => `<button class="filter ${cat === state.category ? 'active' : ''}" data-cat="${cat}">${cat}</button>`).join('');
+        filters.querySelectorAll('button').forEach(btn => btn.addEventListener('click', () => { state.category = btn.dataset.cat; render(); }));
+      }
+
+      function renderCards() {
+        const filtered = state.category === 'All' ? works : works.filter(item => item.category === state.category);
+        grid.innerHTML = filtered.map(item => `
+          <article class="card" data-title="${item.title}">
+            <div class="poster"></div>
+            <div class="card-body">
+              <div class="meta"><span>${item.year}</span><span>${item.duration}</span></div>
+              <h4>${item.title}</h4>
+              <p>${item.desc}</p>
+              <div class="tags">
+                <span class="tag">${item.category}</span>
+                <span class="tag">${item.color}</span>
+              </div>
+            </div>
+          </article>
+        `).join('');
+        empty.hidden = filtered.length !== 0;
+        const io = new IntersectionObserver(entries => entries.forEach(entry => entry.isIntersecting && entry.target.classList.add('in')), { threshold: .14 });
+        grid.querySelectorAll('.card').forEach(card => {
+          const item = filtered.find(x => x.title === card.dataset.title);
+          card.addEventListener('click', () => openPreview(item));
+          io.observe(card);
+        });
+      }
+
+      function openPreview(item) {
+        if (!item.video) return;
+        player.src = item.video;
+        playerTitle.textContent = item.title;
+        playerMeta.textContent = `${item.category} · ${item.year} · ${item.duration}`;
+        dialog.showModal();
+        player.play().catch(() => {});
+      }
+
+      document.getElementById('closeDialog').addEventListener('click', () => { player.pause(); dialog.close(); });
+      dialog.addEventListener('close', () => { player.pause(); player.removeAttribute('src'); player.load(); });
+
+      function render() {
+        renderFilters();
+        renderCards();
+      }
+
+      render();
+    </script>
+  </body>
+</html>
