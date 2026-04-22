@@ -4,8 +4,8 @@ from __future__ import annotations
 import json
 import os
 from dataclasses import dataclass
+from datetime import datetime, timezone
 from pathlib import Path
-from typing import Iterable
 
 import oss2
 
@@ -19,6 +19,7 @@ ACCESS_KEY_ID = os.getenv("OSS_ACCESS_KEY_ID", "").strip()
 ACCESS_KEY_SECRET = os.getenv("OSS_ACCESS_KEY_SECRET", "").strip()
 SIGNED_URL_EXPIRES = int(os.getenv("OSS_SIGNED_URL_EXPIRES", "3600"))
 
+
 @dataclass(frozen=True)
 class WorkItem:
     title: str
@@ -28,6 +29,7 @@ class WorkItem:
     desc: str
     color: str
     object_name: str
+
 
 WORKS: list[WorkItem] = [
     WorkItem("故宫活宝团圆夜AIGC广告", "商业广告 AIGC", "2026", "—", "宫灯、暖金与东方叙事交织，呈现节庆质感的品牌影像。", "Commercial campaign", "videos/故宫活宝团圆夜AIGC广告.m4v"),
@@ -62,22 +64,24 @@ def main() -> None:
     items = []
     for index, work in enumerate(WORKS, start=1):
         signed_url = bucket.sign_url("GET", work.object_name, SIGNED_URL_EXPIRES)
-        items.append({
-            "title": work.title,
-            "category": work.category,
-            "year": work.year,
-            "duration": work.duration,
-            "desc": work.desc,
-            "color": work.color,
-            "object_name": work.object_name,
-            "video": work.object_name,
-            "video_url": signed_url,
-            "order": index,
-        })
+        items.append(
+            {
+                "title": work.title,
+                "category": work.category,
+                "year": work.year,
+                "duration": work.duration,
+                "desc": work.desc,
+                "color": work.color,
+                "object_name": work.object_name,
+                "video": work.object_name,
+                "video_url": signed_url,
+                "order": index,
+            }
+        )
 
     API_DIR.mkdir(parents=True, exist_ok=True)
     payload = {
-        "_refreshed_at": __import__("datetime").datetime.now(__import__("datetime").timezone.utc).isoformat(),
+        "_refreshed_at": datetime.now(timezone.utc).isoformat(),
         "_count": len(items),
         "items": items,
     }

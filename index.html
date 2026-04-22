@@ -186,10 +186,7 @@
     <footer class="wrap">JTAO YOUNG · bright cinematic portfolio.</footer>
 
     <script>
-      const works = [];
-      let loadedItems = [];
-
-      const state = { category: 'All' };
+      const state = { category: 'All', items: [] };
       const grid = document.getElementById('grid');
       const filters = document.getElementById('filters');
       const empty = document.getElementById('empty');
@@ -203,10 +200,7 @@
       const playerTitle = document.getElementById('playerTitle');
       const playerMeta = document.getElementById('playerMeta');
 
-      const categories = ['All'];
-      count.textContent = '0';
-      cats.textContent = '0';
-      updated.textContent = 'Waiting for JSON';
+      let categories = ['All'];
 
       window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 8), { passive: true });
 
@@ -216,7 +210,10 @@
       }
 
       function renderCards() {
-        const filtered = state.category === 'All' ? loadedItems : loadedItems.filter(item => item.category === state.category);
+        const filtered = state.category === 'All' ? state.items : state.items.filter(item => item.category === state.category);
+        count.textContent = String(state.items.length);
+        cats.textContent = String(Math.max(0, categories.length - 1));
+        updated.textContent = state.items.length ? 'Ready' : 'Waiting for JSON';
         grid.innerHTML = filtered.map(item => `
           <article class="card" data-title="${item.title}">
             <div class="poster">
@@ -259,12 +256,30 @@
       document.getElementById('closeDialog').addEventListener('click', () => { player.pause(); dialog.close(); });
       dialog.addEventListener('close', () => { player.pause(); player.removeAttribute('src'); player.load(); });
 
+      async function loadData() {
+        try {
+          const res = await fetch('./api/portfolio.json?t=' + Date.now(), { cache: 'no-store' });
+          const data = await res.json();
+          state.items = Array.isArray(data.items) ? data.items : [];
+          categories = ['All', ...new Set(state.items.map(item => item.category).filter(Boolean))];
+          status.textContent = `Loaded ${state.items.length} videos`;
+          updated.textContent = data._refreshed_at ? new Date(data._refreshed_at).toLocaleString('zh-CN') : 'Ready';
+          render();
+        } catch (error) {
+          console.error(error);
+          status.textContent = 'Failed to load JSON';
+          state.items = [];
+          categories = ['All'];
+          render();
+        }
+      }
+
       function render() {
         renderFilters();
         renderCards();
       }
 
-      render();
+      loadData();
     </script>
   </body>
 </html>
