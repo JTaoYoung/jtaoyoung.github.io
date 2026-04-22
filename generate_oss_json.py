@@ -64,28 +64,6 @@ def main() -> None:
     items = []
     for index, work in enumerate(WORKS, start=1):
         signed_url = bucket.sign_url("GET", work.object_name, SIGNED_URL_EXPIRES)
-        poster_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000">
-  <defs>
-    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#fff8ea"/>
-      <stop offset="55%" stop-color="#f2d59a"/>
-      <stop offset="100%" stop-color="#c7d2fe"/>
-    </linearGradient>
-    <radialGradient id="r" cx="30%" cy="22%" r="60%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.96"/>
-      <stop offset="45%" stop-color="#fff0c8" stop-opacity="0.72"/>
-      <stop offset="100%" stop-color="#fff0c8" stop-opacity="0"/>
-    </radialGradient>
-  </defs>
-  <rect width="800" height="1000" fill="url(#g)"/>
-  <rect width="800" height="1000" fill="url(#r)"/>
-  <rect x="64" y="64" width="672" height="872" rx="42" fill="rgba(255,255,255,0.10)" stroke="rgba(255,255,255,0.38)"/>
-  <text x="86" y="140" fill="#0f172a" font-size="28" font-family="Arial, sans-serif" letter-spacing="4">${work.category}</text>
-  <text x="86" y="290" fill="#0f172a" font-size="62" font-family="Arial, sans-serif" font-weight="700">${work.title[:18] if len(work.title) > 18 else work.title}</text>
-  <text x="86" y="370" fill="#334155" font-size="30" font-family="Arial, sans-serif">${work.year}</text>
-  <text x="86" y="920" fill="#0f172a" font-size="24" font-family="Arial, sans-serif">${work.desc[:34]}</text>
-</svg>'''
-        poster_url = "data:image/svg+xml;charset=UTF-8," + poster_svg.replace("#", "%23").replace("<", "%3C").replace(">", "%3E").replace("\n", "")
         items.append(
             {
                 "title": work.title,
@@ -97,7 +75,6 @@ def main() -> None:
                 "object_name": work.object_name,
                 "video": work.object_name,
                 "video_url": signed_url,
-                "poster_url": poster_url,
                 "order": index,
             }
         )
