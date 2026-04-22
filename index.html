@@ -186,18 +186,8 @@
     <footer class="wrap">JTAO YOUNG · bright cinematic portfolio.</footer>
 
     <script>
-      const works = [
-        { title: "故宫活宝团圆夜AIGC广告", category: "商业广告 AIGC", year: "2026", duration: "—", desc: "宫灯、暖金与东方叙事交织，呈现节庆质感的品牌影像。", color: "Commercial campaign", video: "videos/故宫活宝团圆夜AIGC广告.m4v" },
-        { title: "蒙牛软牛奶广告", category: "商业广告 AIGC", year: "2026", duration: "—", desc: "明亮纯净的乳白基调，强调产品光泽与干净的商业节奏。", color: "Commercial campaign", video: "videos/蒙牛软牛奶广告.mp4" },
-        { title: "蒙牛软牛奶AIGC广告", category: "商业广告 AIGC", year: "2026", duration: "—", desc: "柔和高光与轻盈氛围感，突出奶感、口感和流动光影。", color: "Commercial campaign", video: "videos/蒙牛软牛奶AIGC广告.mp4" },
-        { title: "蒙牛优骨牛奶AIGC广告", category: "商业广告 AIGC", year: "2026", duration: "—", desc: "健康、活力与通透光效结合，打造高级品牌视觉。", color: "Commercial campaign", video: "videos/蒙牛优骨牛奶AIGC广告.mp4" },
-        { title: "仁和牌清火胶囊AIGC广告", category: "商业广告 AIGC", year: "2026", duration: "—", desc: "以清爽光线和强对比构图，营造药品广告的专业可信感。", color: "Commercial campaign", video: "videos/仁和牌清火胶囊AIGC广告.mp4" },
-        { title: "阿玛尼美妆篇", category: "个人创作 AIGC", year: "2026", duration: "—", desc: "克制、精致、带有时装大片式的明暗交界与肤感细节。", color: "Personal creation", video: "videos/阿玛尼美妆篇.mp4" },
-        { title: "古风武侠篇", category: "个人创作 AIGC", year: "2026", duration: "—", desc: "水墨、剑气、日照与雾气交织成具有叙事感的画面。", color: "Personal creation", video: "videos/古风武侠篇.mp4" },
-        { title: "科幻动作篇", category: "个人创作 AIGC", year: "2026", duration: "—", desc: "蓝白色能量感和高速镜头语言，塑造未来动作氛围。", color: "Personal creation", video: "videos/科幻动作篇.mp4" },
-        { title: "香奈儿时尚篇", category: "个人创作 AIGC", year: "2026", duration: "—", desc: "优雅、简洁、光影分层清晰，具有时尚广告片的精致质感。", color: "Personal creation", video: "videos/香奈儿时尚篇.mp4" },
-        { title: "战术特工篇", category: "个人创作 AIGC", year: "2026", duration: "—", desc: "低饱和冷感与战术化构图，让动作张力更具电影性。", color: "Personal creation", video: "videos/战术特工篇.mp4" }
-      ];
+      const works = [];
+      let loadedItems = [];
 
       const state = { category: 'All' };
       const grid = document.getElementById('grid');
@@ -213,10 +203,10 @@
       const playerTitle = document.getElementById('playerTitle');
       const playerMeta = document.getElementById('playerMeta');
 
-      const categories = ['All', ...new Set(works.map(item => item.category))];
-      count.textContent = works.length;
-      cats.textContent = categories.length - 1;
-      updated.textContent = 'Ready';
+      const categories = ['All'];
+      count.textContent = '0';
+      cats.textContent = '0';
+      updated.textContent = 'Waiting for JSON';
 
       window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 8), { passive: true });
 
@@ -226,19 +216,19 @@
       }
 
       function renderCards() {
-        const filtered = state.category === 'All' ? works : works.filter(item => item.category === state.category);
+        const filtered = state.category === 'All' ? loadedItems : loadedItems.filter(item => item.category === state.category);
         grid.innerHTML = filtered.map(item => `
           <article class="card" data-title="${item.title}">
             <div class="poster">
-              <video muted playsinline preload="metadata" poster="" src="${item.video}#t=0.1"></video>
+              <video muted playsinline preload="metadata" data-path="${item.video_url || ''}" src=""></video>
             </div>
             <div class="card-body">
-              <div class="meta"><span>${item.year}</span><span>${item.duration}</span></div>
+              <div class="meta"><span>${item.year || ''}</span><span>${item.duration || ''}</span></div>
               <h4>${item.title}</h4>
-              <p>${item.desc}</p>
+              <p>${item.desc || ''}</p>
               <div class="tags">
-                <span class="tag">${item.category}</span>
-                <span class="tag">${item.color}</span>
+                <span class="tag">${item.category || ''}</span>
+                <span class="tag">${item.color || ''}</span>
               </div>
             </div>
           </article>
@@ -248,15 +238,18 @@
         grid.querySelectorAll('.card').forEach(card => {
           const item = filtered.find(x => x.title === card.dataset.title);
           const clip = card.querySelector('video');
-          if (clip) { clip.addEventListener('mouseenter', () => clip.play().catch(() => {})); clip.addEventListener('mouseleave', () => { clip.pause(); clip.currentTime = 0; }); }
           card.addEventListener('click', () => openPreview(item));
           io.observe(card);
+          if (clip && item && item.video_url) {
+            clip.addEventListener('mouseenter', () => clip.play().catch(() => {}));
+            clip.addEventListener('mouseleave', () => { clip.pause(); clip.currentTime = 0; });
+          }
         });
       }
 
       function openPreview(item) {
-        if (!item.video) return;
-        player.src = item.video;
+        if (!item?.video_url) return;
+        player.src = item.video_url;
         playerTitle.textContent = item.title;
         playerMeta.textContent = `${item.category} · ${item.year} · ${item.duration}`;
         dialog.showModal();
