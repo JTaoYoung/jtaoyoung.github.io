@@ -217,8 +217,7 @@
         grid.innerHTML = filtered.map(item => `
           <article class="card" data-title="${item.title}">
             <div class="poster">
-              ${item.cover_url ? `<img alt="${item.title} 封面" src="${item.cover_url}">` : `<div style="position:absolute;inset:0;display:grid;place-items:end start;padding:18px;background:linear-gradient(180deg, rgba(255,255,255,.18) 0%, rgba(17,24,39,.12) 42%, rgba(17,24,39,.62) 100%);color:#fff;z-index:1"><div><div style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;opacity:.78">Video Cover</div><div style="font-size:22px;line-height:1.2;max-width:10ch;margin-top:10px;font-weight:700">${item.title}</div></div></div>`}
-              <video muted playsinline preload="metadata" data-path="${item.video_url || ''}" src=""></video>
+              <video muted playsinline preload="metadata" loop src="${item.video_url || ''}"></video>
             </div>
             <div class="card-body">
               <div class="meta"><span>${item.year || ''}</span><span>${item.duration || ''}</span></div>
@@ -235,13 +234,8 @@
         const io = new IntersectionObserver(entries => entries.forEach(entry => entry.isIntersecting && entry.target.classList.add('in')), { threshold: .14 });
         grid.querySelectorAll('.card').forEach(card => {
           const item = filtered.find(x => x.title === card.dataset.title);
-          const clip = card.querySelector('video');
           card.addEventListener('click', () => openPreview(item));
           io.observe(card);
-          if (clip && item && item.video_url) {
-            clip.addEventListener('mouseenter', () => clip.play().catch(() => {}));
-            clip.addEventListener('mouseleave', () => { clip.pause(); clip.currentTime = 0; });
-          }
         });
       }
 
