@@ -8,6 +8,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import oss2
+from urllib.parse import quote
 
 REPO_DIR = Path(__file__).resolve().parent
 API_DIR = REPO_DIR / "api"
@@ -18,6 +19,7 @@ OSS_REGION = os.getenv("OSS_REGION", "oss-cn-shenzhen")
 ACCESS_KEY_ID = os.getenv("OSS_ACCESS_KEY_ID", "").strip()
 ACCESS_KEY_SECRET = os.getenv("OSS_ACCESS_KEY_SECRET", "").strip()
 SIGNED_URL_EXPIRES = int(os.getenv("OSS_SIGNED_URL_EXPIRES", "3600"))
+BASE_URL = f"https://{BUCKET_NAME}.{OSS_REGION}.aliyuncs.com"
 
 
 @dataclass(frozen=True)
@@ -51,19 +53,16 @@ def require_env() -> None:
         raise SystemExit(f"Missing environment variables: {', '.join(missing)}")
 
 
-def make_bucket() -> oss2.Bucket:
-    auth = oss2.Auth(ACCESS_KEY_ID, ACCESS_KEY_SECRET)
-    endpoint = f"https://{OSS_REGION}.aliyuncs.com"
-    return oss2.Bucket(auth, endpoint, BUCKET_NAME)
+def make_public_url(object_name: str) -> str:
+    return f"{BASE_URL}/{quote(object_name)}"
 
 
 def main() -> None:
     require_env()
-    bucket = make_bucket()
 
     items = []
     for index, work in enumerate(WORKS, start=1):
-        signed_url = bucket.sign_url("GET", work.object_name, SIGNED_URL_EXPIRES)
+        public_url = make_public_url(work.object_name)
         items.append(
             {
                 "title": work.title,
@@ -74,7 +73,7 @@ def main() -> None:
                 "color": work.color,
                 "object_name": work.object_name,
                 "video": work.object_name,
-                "video_url": signed_url,
+                "video_url": public_url,
                 "order": index,
             }
         )
