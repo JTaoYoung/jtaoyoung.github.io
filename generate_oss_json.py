@@ -12,7 +12,7 @@ REPO_DIR = Path(__file__).resolve().parent
 API_DIR = REPO_DIR / "api"
 PORTFOLIO_FILE = API_DIR / "portfolio.json"
 
-ASSET_BASE = os.getenv("ASSET_BASE", "")
+ASSET_BASE = os.getenv("ASSET_BASE", "https://JTaoYoung.github.io")
 
 
 @dataclass(frozen=True)
@@ -43,7 +43,7 @@ WORKS: list[WorkItem] = [
 def make_public_url(object_name: str) -> str:
     if ASSET_BASE:
         return f"{ASSET_BASE.rstrip('/')}/{quote(object_name)}"
-    return f"./{quote(object_name)}"
+    return f"/videos/{quote(Path(object_name).name)}"
 
 
 def main() -> None:
