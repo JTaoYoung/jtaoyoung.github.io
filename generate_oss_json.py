@@ -46,6 +46,13 @@ def make_public_url(object_name: str) -> str:
     return f"/videos/{quote(Path(object_name).name)}"
 
 
+def make_poster_url(object_name: str) -> str:
+    stem = Path(object_name).with_suffix(".jpg").name
+    if ASSET_BASE:
+        return f"{ASSET_BASE.rstrip('/')}/posters/{quote(stem)}"
+    return f"/posters/{quote(stem)}"
+
+
 def main() -> None:
     items = []
     for index, work in enumerate(WORKS, start=1):
@@ -61,6 +68,7 @@ def main() -> None:
                 "object_name": work.object_name,
                 "video": work.object_name,
                 "video_url": public_url,
+                "poster_url": make_poster_url(work.object_name),
                 "order": index,
             }
         )
