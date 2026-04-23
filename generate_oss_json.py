@@ -6,8 +6,6 @@ import os
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
-
-import oss2
 from urllib.parse import quote
 
 REPO_DIR = Path(__file__).resolve().parent
@@ -16,10 +14,6 @@ PORTFOLIO_FILE = API_DIR / "portfolio.json"
 
 BUCKET_NAME = os.getenv("OSS_BUCKET", "videos-aigc-cw")
 OSS_REGION = os.getenv("OSS_REGION", "oss-cn-shenzhen")
-ACCESS_KEY_ID = os.getenv("OSS_ACCESS_KEY_ID", "").strip()
-ACCESS_KEY_SECRET = os.getenv("OSS_ACCESS_KEY_SECRET", "").strip()
-SIGNED_URL_EXPIRES = int(os.getenv("OSS_SIGNED_URL_EXPIRES", "3600"))
-BASE_URL = f"https://{BUCKET_NAME}.{OSS_REGION}.aliyuncs.com"
 
 
 @dataclass(frozen=True)
@@ -47,19 +41,11 @@ WORKS: list[WorkItem] = [
 ]
 
 
-def require_env() -> None:
-    missing = [name for name, value in (("OSS_ACCESS_KEY_ID", ACCESS_KEY_ID), ("OSS_ACCESS_KEY_SECRET", ACCESS_KEY_SECRET)) if not value]
-    if missing:
-        raise SystemExit(f"Missing environment variables: {', '.join(missing)}")
-
-
 def make_public_url(object_name: str) -> str:
-    return f"{BASE_URL}/{quote(object_name)}"
+    return f"https://{BUCKET_NAME}.{OSS_REGION}.aliyuncs.com/{quote(object_name)}"
 
 
 def main() -> None:
-    require_env()
-
     items = []
     for index, work in enumerate(WORKS, start=1):
         public_url = make_public_url(work.object_name)
