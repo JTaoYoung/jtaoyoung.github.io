@@ -27,16 +27,16 @@ class WorkItem:
 
 
 WORKS: list[WorkItem] = [
-    WorkItem("故宫活宝团圆夜AIGC广告", "商业广告 AIGC", "2026", "—", "宫灯、暖金与东方叙事交织，呈现节庆质感的品牌影像。", "Commercial campaign", "videos/故宫活宝团圆夜AIGC广告.m4v"),
-    WorkItem("蒙牛软牛奶广告", "商业广告 AIGC", "2026", "—", "明亮纯净的乳白基调，强调产品光泽与干净的商业节奏。", "Commercial campaign", "videos/蒙牛软牛奶广告.mp4"),
-    WorkItem("蒙牛软牛奶AIGC广告", "商业广告 AIGC", "2026", "—", "柔和高光与轻盈氛围感，突出奶感、口感和流动光影。", "Commercial campaign", "videos/蒙牛软牛奶AIGC广告.mp4"),
-    WorkItem("蒙牛优骨牛奶AIGC广告", "商业广告 AIGC", "2026", "—", "健康、活力与通透光效结合，打造高级品牌视觉。", "Commercial campaign", "videos/蒙牛优骨牛奶AIGC广告.mp4"),
-    WorkItem("仁和牌清火胶囊AIGC广告", "商业广告 AIGC", "2026", "—", "以清爽光线和强对比构图，营造药品广告的专业可信感。", "Commercial campaign", "videos/仁和牌清火胶囊AIGC广告.mp4"),
-    WorkItem("阿玛尼美妆篇", "个人创作 AIGC", "2026", "—", "克制、精致、带有时装大片式的明暗交界与肤感细节。", "Personal creation", "videos/阿玛尼美妆篇.mp4"),
-    WorkItem("古风武侠篇", "个人创作 AIGC", "2026", "—", "水墨、剑气、日照与雾气交织成具有叙事感的画面。", "Personal creation", "videos/古风武侠篇.mp4"),
-    WorkItem("科幻动作篇", "个人创作 AIGC", "2026", "—", "蓝白色能量感和高速镜头语言，塑造未来动作氛围。", "Personal creation", "videos/科幻动作篇.mp4"),
-    WorkItem("香奈儿时尚篇", "个人创作 AIGC", "2026", "—", "优雅、简洁、光影分层清晰，具有时尚广告片的精致质感。", "Personal creation", "videos/香奈儿时尚篇.mp4"),
-    WorkItem("战术特工篇", "个人创作 AIGC", "2026", "—", "低饱和冷感与战术化构图，让动作张力更具电影性。", "Personal creation", "videos/战术特工篇.mp4"),
+    WorkItem("故宫活宝团圆夜AIGC广告", "商业广告 AIGC", "2026", "—", "宫灯、暖金与东方叙事交织，呈现节庆质感的品牌影像。", "Commercial campaign", "videos/imperial-reunion-night.m4v"),
+    WorkItem("蒙牛软牛奶广告", "商业广告 AIGC", "2026", "—", "明亮纯净的乳白基调，强调产品光泽与干净的商业节奏。", "Commercial campaign", "videos/mengniu-softmilk-ad.mp4"),
+    WorkItem("蒙牛软牛奶AIGC广告", "商业广告 AIGC", "2026", "—", "柔和高光与轻盈氛围感，突出奶感、口感和流动光影。", "Commercial campaign", "videos/mengniu-softmilk-aigc-ad.mp4"),
+    WorkItem("蒙牛优骨牛奶AIGC广告", "商业广告 AIGC", "2026", "—", "健康、活力与通透光效结合，打造高级品牌视觉。", "Commercial campaign", "videos/mengniu-yg-milk-aigc-ad.mp4"),
+    WorkItem("仁和牌清火胶囊AIGC广告", "商业广告 AIGC", "2026", "—", "以清爽光线和强对比构图，营造药品广告的专业可信感。", "Commercial campaign", "videos/renhe-clearing-capsule-aigc-ad.mp4"),
+    WorkItem("阿玛尼美妆篇", "个人创作 AIGC", "2026", "—", "克制、精致、带有时装大片式的明暗交界与肤感细节。", "Personal creation", "videos/armani-beauty.mp4"),
+    WorkItem("古风武侠篇", "个人创作 AIGC", "2026", "—", "水墨、剑气、日照与雾气交织成具有叙事感的画面。", "Personal creation", "videos/ancient-martial-arts.mp4"),
+    WorkItem("科幻动作篇", "个人创作 AIGC", "2026", "—", "蓝白色能量感和高速镜头语言，塑造未来动作氛围。", "Personal creation", "videos/sci-fi-action.mp4"),
+    WorkItem("香奈儿时尚篇", "个人创作 AIGC", "2026", "—", "优雅、简洁、光影分层清晰，具有时尚广告片的精致质感。", "Personal creation", "videos/chanel-fashion.mp4"),
+    WorkItem("战术特工篇", "个人创作 AIGC", "2026", "—", "低饱和冷感与战术化构图，让动作张力更具电影性。", "Personal creation", "videos/tactical-agent.mp4"),
 ]
 
 

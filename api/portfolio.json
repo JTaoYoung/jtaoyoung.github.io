@@ -1,5 +1,5 @@
 {
-  "_refreshed_at": "2026-04-23T04:13:43.652320+00:00",
+  "_refreshed_at": "2026-04-23T06:21:15.656986+00:00",
   "_count": 10,
   "items": [
     {
@@ -9,10 +9,10 @@
       "duration": "—",
       "desc": "宫灯、暖金与东方叙事交织，呈现节庆质感的品牌影像。",
       "color": "Commercial campaign",
-      "object_name": "videos/故宫活宝团圆夜AIGC广告.m4v",
-      "video": "videos/故宫活宝团圆夜AIGC广告.m4v",
-      "video_url": "https://JTaoYoung.github.io/videos/%E6%95%85%E5%AE%AB%E6%B4%BB%E5%AE%9D%E5%9B%A2%E5%9C%86%E5%A4%9CAIGC%E5%B9%BF%E5%91%8A.m4v",
-      "poster_url": "https://JTaoYoung.github.io/posters/%E6%95%85%E5%AE%AB%E6%B4%BB%E5%AE%9D%E5%9B%A2%E5%9C%86%E5%A4%9CAIGC%E5%B9%BF%E5%91%8A.jpg",
+      "object_name": "videos/imperial-reunion-night.m4v",
+      "video": "videos/imperial-reunion-night.m4v",
+      "video_url": "https://JTaoYoung.github.io/videos/imperial-reunion-night.m4v",
+      "poster_url": "https://JTaoYoung.github.io/posters/imperial-reunion-night.jpg",
       "order": 1
     },
     {
@@ -22,10 +22,10 @@
       "duration": "—",
       "desc": "明亮纯净的乳白基调，强调产品光泽与干净的商业节奏。",
       "color": "Commercial campaign",
-      "object_name": "videos/蒙牛软牛奶广告.mp4",
-      "video": "videos/蒙牛软牛奶广告.mp4",
-      "video_url": "https://JTaoYoung.github.io/videos/%E8%92%99%E7%89%9B%E8%BD%AF%E7%89%9B%E5%A5%B6%E5%B9%BF%E5%91%8A.mp4",
-      "poster_url": "https://JTaoYoung.github.io/posters/%E8%92%99%E7%89%9B%E8%BD%AF%E7%89%9B%E5%A5%B6%E5%B9%BF%E5%91%8A.jpg",
+      "object_name": "videos/mengniu-softmilk-ad.mp4",
+      "video": "videos/mengniu-softmilk-ad.mp4",
+      "video_url": "https://JTaoYoung.github.io/videos/mengniu-softmilk-ad.mp4",
+      "poster_url": "https://JTaoYoung.github.io/posters/mengniu-softmilk-ad.jpg",
       "order": 2
     },
     {
@@ -35,10 +35,10 @@
       "duration": "—",
       "desc": "柔和高光与轻盈氛围感，突出奶感、口感和流动光影。",
       "color": "Commercial campaign",
-      "object_name": "videos/蒙牛软牛奶AIGC广告.mp4",
-      "video": "videos/蒙牛软牛奶AIGC广告.mp4",
-      "video_url": "https://JTaoYoung.github.io/videos/%E8%92%99%E7%89%9B%E8%BD%AF%E7%89%9B%E5%A5%B6AIGC%E5%B9%BF%E5%91%8A.mp4",
-      "poster_url": "https://JTaoYoung.github.io/posters/%E8%92%99%E7%89%9B%E8%BD%AF%E7%89%9B%E5%A5%B6AIGC%E5%B9%BF%E5%91%8A.jpg",
+      "object_name": "videos/mengniu-softmilk-aigc-ad.mp4",
+      "video": "videos/mengniu-softmilk-aigc-ad.mp4",
+      "video_url": "https://JTaoYoung.github.io/videos/mengniu-softmilk-aigc-ad.mp4",
+      "poster_url": "https://JTaoYoung.github.io/posters/mengniu-softmilk-aigc-ad.jpg",
       "order": 3
     },
     {
@@ -48,10 +48,10 @@
       "duration": "—",
       "desc": "健康、活力与通透光效结合，打造高级品牌视觉。",
       "color": "Commercial campaign",
-      "object_name": "videos/蒙牛优骨牛奶AIGC广告.mp4",
-      "video": "videos/蒙牛优骨牛奶AIGC广告.mp4",
-      "video_url": "https://JTaoYoung.github.io/videos/%E8%92%99%E7%89%9B%E4%BC%98%E9%AA%A8%E7%89%9B%E5%A5%B6AIGC%E5%B9%BF%E5%91%8A.mp4",
-      "poster_url": "https://JTaoYoung.github.io/posters/%E8%92%99%E7%89%9B%E4%BC%98%E9%AA%A8%E7%89%9B%E5%A5%B6AIGC%E5%B9%BF%E5%91%8A.jpg",
+      "object_name": "videos/mengniu-yg-milk-aigc-ad.mp4",
+      "video": "videos/mengniu-yg-milk-aigc-ad.mp4",
+      "video_url": "https://JTaoYoung.github.io/videos/mengniu-yg-milk-aigc-ad.mp4",
+      "poster_url": "https://JTaoYoung.github.io/posters/mengniu-yg-milk-aigc-ad.jpg",
       "order": 4
     },
     {
@@ -61,10 +61,10 @@
       "duration": "—",
       "desc": "以清爽光线和强对比构图，营造药品广告的专业可信感。",
       "color": "Commercial campaign",
-      "object_name": "videos/仁和牌清火胶囊AIGC广告.mp4",
-      "video": "videos/仁和牌清火胶囊AIGC广告.mp4",
-      "video_url": "https://JTaoYoung.github.io/videos/%E4%BB%81%E5%92%8C%E7%89%8C%E6%B8%85%E7%81%AB%E8%83%B6%E5%9B%8AAIGC%E5%B9%BF%E5%91%8A.mp4",
-      "poster_url": "https://JTaoYoung.github.io/posters/%E4%BB%81%E5%92%8C%E7%89%8C%E6%B8%85%E7%81%AB%E8%83%B6%E5%9B%8AAIGC%E5%B9%BF%E5%91%8A.jpg",
+      "object_name": "videos/renhe-clearing-capsule-aigc-ad.mp4",
+      "video": "videos/renhe-clearing-capsule-aigc-ad.mp4",
+      "video_url": "https://JTaoYoung.github.io/videos/renhe-clearing-capsule-aigc-ad.mp4",
+      "poster_url": "https://JTaoYoung.github.io/posters/renhe-clearing-capsule-aigc-ad.jpg",
       "order": 5
     },
     {
@@ -74,10 +74,10 @@
       "duration": "—",
       "desc": "克制、精致、带有时装大片式的明暗交界与肤感细节。",
       "color": "Personal creation",
-      "object_name": "videos/阿玛尼美妆篇.mp4",
-      "video": "videos/阿玛尼美妆篇.mp4",
-      "video_url": "https://JTaoYoung.github.io/videos/%E9%98%BF%E7%8E%9B%E5%B0%BC%E7%BE%8E%E5%A6%86%E7%AF%87.mp4",
-      "poster_url": "https://JTaoYoung.github.io/posters/%E9%98%BF%E7%8E%9B%E5%B0%BC%E7%BE%8E%E5%A6%86%E7%AF%87.jpg",
+      "object_name": "videos/armani-beauty.mp4",
+      "video": "videos/armani-beauty.mp4",
+      "video_url": "https://JTaoYoung.github.io/videos/armani-beauty.mp4",
+      "poster_url": "https://JTaoYoung.github.io/posters/armani-beauty.jpg",
       "order": 6
     },
     {
@@ -87,10 +87,10 @@
       "duration": "—",
       "desc": "水墨、剑气、日照与雾气交织成具有叙事感的画面。",
       "color": "Personal creation",
-      "object_name": "videos/古风武侠篇.mp4",
-      "video": "videos/古风武侠篇.mp4",
-      "video_url": "https://JTaoYoung.github.io/videos/%E5%8F%A4%E9%A3%8E%E6%AD%A6%E4%BE%A0%E7%AF%87.mp4",
-      "poster_url": "https://JTaoYoung.github.io/posters/%E5%8F%A4%E9%A3%8E%E6%AD%A6%E4%BE%A0%E7%AF%87.jpg",
+      "object_name": "videos/ancient-martial-arts.mp4",
+      "video": "videos/ancient-martial-arts.mp4",
+      "video_url": "https://JTaoYoung.github.io/videos/ancient-martial-arts.mp4",
+      "poster_url": "https://JTaoYoung.github.io/posters/ancient-martial-arts.jpg",
       "order": 7
     },
     {
@@ -100,10 +100,10 @@
       "duration": "—",
       "desc": "蓝白色能量感和高速镜头语言，塑造未来动作氛围。",
       "color": "Personal creation",
-      "object_name": "videos/科幻动作篇.mp4",
-      "video": "videos/科幻动作篇.mp4",
-      "video_url": "https://JTaoYoung.github.io/videos/%E7%A7%91%E5%B9%BB%E5%8A%A8%E4%BD%9C%E7%AF%87.mp4",
-      "poster_url": "https://JTaoYoung.github.io/posters/%E7%A7%91%E5%B9%BB%E5%8A%A8%E4%BD%9C%E7%AF%87.jpg",
+      "object_name": "videos/sci-fi-action.mp4",
+      "video": "videos/sci-fi-action.mp4",
+      "video_url": "https://JTaoYoung.github.io/videos/sci-fi-action.mp4",
+      "poster_url": "https://JTaoYoung.github.io/posters/sci-fi-action.jpg",
       "order": 8
     },
     {
@@ -113,10 +113,10 @@
       "duration": "—",
       "desc": "优雅、简洁、光影分层清晰，具有时尚广告片的精致质感。",
       "color": "Personal creation",
-      "object_name": "videos/香奈儿时尚篇.mp4",
-      "video": "videos/香奈儿时尚篇.mp4",
-      "video_url": "https://JTaoYoung.github.io/videos/%E9%A6%99%E5%A5%88%E5%84%BF%E6%97%B6%E5%B0%9A%E7%AF%87.mp4",
-      "poster_url": "https://JTaoYoung.github.io/posters/%E9%A6%99%E5%A5%88%E5%84%BF%E6%97%B6%E5%B0%9A%E7%AF%87.jpg",
+      "object_name": "videos/chanel-fashion.mp4",
+      "video": "videos/chanel-fashion.mp4",
+      "video_url": "https://JTaoYoung.github.io/videos/chanel-fashion.mp4",
+      "poster_url": "https://JTaoYoung.github.io/posters/chanel-fashion.jpg",
       "order": 9
     },
     {
@@ -126,10 +126,10 @@
       "duration": "—",
       "desc": "低饱和冷感与战术化构图，让动作张力更具电影性。",
       "color": "Personal creation",
-      "object_name": "videos/战术特工篇.mp4",
-      "video": "videos/战术特工篇.mp4",
-      "video_url": "https://JTaoYoung.github.io/videos/%E6%88%98%E6%9C%AF%E7%89%B9%E5%B7%A5%E7%AF%87.mp4",
-      "poster_url": "https://JTaoYoung.github.io/posters/%E6%88%98%E6%9C%AF%E7%89%B9%E5%B7%A5%E7%AF%87.jpg",
+      "object_name": "videos/tactical-agent.mp4",
+      "video": "videos/tactical-agent.mp4",
+      "video_url": "https://JTaoYoung.github.io/videos/tactical-agent.mp4",
+      "poster_url": "https://JTaoYoung.github.io/posters/tactical-agent.jpg",
       "order": 10
     }
   ]
