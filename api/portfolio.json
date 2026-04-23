@@ -1,5 +1,5 @@
 {
-  "_refreshed_at": "2026-04-23T06:21:15.656986+00:00",
+  "_refreshed_at": "2026-04-23T07:16:44.438310+00:00",
   "_count": 10,
   "items": [
     {
@@ -11,7 +11,7 @@
       "color": "Commercial campaign",
       "object_name": "videos/imperial-reunion-night.m4v",
       "video": "videos/imperial-reunion-night.m4v",
-      "video_url": "https://JTaoYoung.github.io/videos/imperial-reunion-night.m4v",
+      "video_url": "https://www.bilibili.com/video/BV1XEoeB4EsD/",
       "poster_url": "https://JTaoYoung.github.io/posters/imperial-reunion-night.jpg",
       "order": 1
     },
@@ -24,7 +24,7 @@
       "color": "Commercial campaign",
       "object_name": "videos/mengniu-softmilk-ad.mp4",
       "video": "videos/mengniu-softmilk-ad.mp4",
-      "video_url": "https://JTaoYoung.github.io/videos/mengniu-softmilk-ad.mp4",
+      "video_url": "https://www.bilibili.com/video/BV1GEoeBtE7p/",
       "poster_url": "https://JTaoYoung.github.io/posters/mengniu-softmilk-ad.jpg",
       "order": 2
     },
@@ -37,7 +37,7 @@
       "color": "Commercial campaign",
       "object_name": "videos/mengniu-softmilk-aigc-ad.mp4",
       "video": "videos/mengniu-softmilk-aigc-ad.mp4",
-      "video_url": "https://JTaoYoung.github.io/videos/mengniu-softmilk-aigc-ad.mp4",
+      "video_url": "https://www.bilibili.com/video/BV1giohBEEtR/",
       "poster_url": "https://JTaoYoung.github.io/posters/mengniu-softmilk-aigc-ad.jpg",
       "order": 3
     },
@@ -50,7 +50,7 @@
       "color": "Commercial campaign",
       "object_name": "videos/mengniu-yg-milk-aigc-ad.mp4",
       "video": "videos/mengniu-yg-milk-aigc-ad.mp4",
-      "video_url": "https://JTaoYoung.github.io/videos/mengniu-yg-milk-aigc-ad.mp4",
+      "video_url": "https://www.bilibili.com/video/BV1hiohBEE28/",
       "poster_url": "https://JTaoYoung.github.io/posters/mengniu-yg-milk-aigc-ad.jpg",
       "order": 4
     },
@@ -63,7 +63,7 @@
       "color": "Commercial campaign",
       "object_name": "videos/renhe-clearing-capsule-aigc-ad.mp4",
       "video": "videos/renhe-clearing-capsule-aigc-ad.mp4",
-      "video_url": "https://JTaoYoung.github.io/videos/renhe-clearing-capsule-aigc-ad.mp4",
+      "video_url": "https://www.bilibili.com/video/BV13iohBEEhk/",
       "poster_url": "https://JTaoYoung.github.io/posters/renhe-clearing-capsule-aigc-ad.jpg",
       "order": 5
     },
@@ -76,7 +76,7 @@
       "color": "Personal creation",
       "object_name": "videos/armani-beauty.mp4",
       "video": "videos/armani-beauty.mp4",
-      "video_url": "https://JTaoYoung.github.io/videos/armani-beauty.mp4",
+      "video_url": "https://www.bilibili.com/video/BV1QEoeB4EZM/",
       "poster_url": "https://JTaoYoung.github.io/posters/armani-beauty.jpg",
       "order": 6
     },
@@ -89,7 +89,7 @@
       "color": "Personal creation",
       "object_name": "videos/ancient-martial-arts.mp4",
       "video": "videos/ancient-martial-arts.mp4",
-      "video_url": "https://JTaoYoung.github.io/videos/ancient-martial-arts.mp4",
+      "video_url": "https://www.bilibili.com/video/BV1QEoeB4EnR/",
       "poster_url": "https://JTaoYoung.github.io/posters/ancient-martial-arts.jpg",
       "order": 7
     },
@@ -102,7 +102,7 @@
       "color": "Personal creation",
       "object_name": "videos/sci-fi-action.mp4",
       "video": "videos/sci-fi-action.mp4",
-      "video_url": "https://JTaoYoung.github.io/videos/sci-fi-action.mp4",
+      "video_url": "https://www.bilibili.com/video/BV1giohBEERB/",
       "poster_url": "https://JTaoYoung.github.io/posters/sci-fi-action.jpg",
       "order": 8
     },
@@ -115,7 +115,7 @@
       "color": "Personal creation",
       "object_name": "videos/chanel-fashion.mp4",
       "video": "videos/chanel-fashion.mp4",
-      "video_url": "https://JTaoYoung.github.io/videos/chanel-fashion.mp4",
+      "video_url": "https://www.bilibili.com/video/BV1XEoeB4Es6/",
       "poster_url": "https://JTaoYoung.github.io/posters/chanel-fashion.jpg",
       "order": 9
     },
@@ -128,7 +128,7 @@
       "color": "Personal creation",
       "object_name": "videos/tactical-agent.mp4",
       "video": "videos/tactical-agent.mp4",
-      "video_url": "https://JTaoYoung.github.io/videos/tactical-agent.mp4",
+      "video_url": "https://www.bilibili.com/video/BV13iohBEEPL/",
       "poster_url": "https://JTaoYoung.github.io/posters/tactical-agent.jpg",
       "order": 10
     }
