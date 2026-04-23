@@ -179,7 +179,7 @@
         <button class="close" id="closeDialog">Close</button>
       </div>
       <div class="player-stage">
-        <video id="player" controls playsinline></video>
+        <iframe id="player" title="B站播放器" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen style="width:100%;height:100%;border:0;"></iframe>
       </div>
     </dialog>
 
@@ -249,15 +249,20 @@
 
       function openPreview(item) {
         if (!item?.video_url) return;
-        player.src = item.video_url;
+        const bvMatch = item.video_url.match(/BV[0-9A-Za-z]+/);
+        const bvid = bvMatch ? bvMatch[0] : '';
+        const embedUrl = bvid
+          ? `https://player.bilibili.com/player.html?bvid=${bvid}&high_quality=1&autoplay=1&as_wide=1&danmaku=0`
+          : item.video_url;
+        player.src = embedUrl;
         playerTitle.textContent = item.title;
         playerMeta.textContent = `${item.category} · ${item.year} · ${item.duration}`;
         dialog.showModal();
-        player.play().catch(() => {});
       }
 
       document.getElementById('closeDialog').addEventListener('click', () => { player.pause(); dialog.close(); });
       dialog.addEventListener('close', () => { player.pause(); player.removeAttribute('src'); player.load(); });
+      dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
 
       async function loadData() {
         try {

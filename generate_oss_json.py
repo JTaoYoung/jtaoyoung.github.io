@@ -14,6 +14,19 @@ PORTFOLIO_FILE = API_DIR / "portfolio.json"
 
 ASSET_BASE = os.getenv("ASSET_BASE", "https://JTaoYoung.github.io")
 
+BILIBILI_LINKS = {
+    "故宫活宝团圆夜AIGC广告": "https://www.bilibili.com/video/BV1XEoeB4EsD/",
+    "蒙牛软牛奶广告": "https://www.bilibili.com/video/BV1GEoeBtE7p/",
+    "蒙牛软牛奶AIGC广告": "https://www.bilibili.com/video/BV1giohBEEtR/",
+    "蒙牛优骨牛奶AIGC广告": "https://www.bilibili.com/video/BV1hiohBEE28/",
+    "仁和牌清火胶囊AIGC广告": "https://www.bilibili.com/video/BV13iohBEEhk/",
+    "阿玛尼美妆篇": "https://www.bilibili.com/video/BV1QEoeB4EZM/",
+    "古风武侠篇": "https://www.bilibili.com/video/BV1QEoeB4EnR/",
+    "科幻动作篇": "https://www.bilibili.com/video/BV1giohBEERB/",
+    "香奈儿时尚篇": "https://www.bilibili.com/video/BV1XEoeB4Es6/",
+    "战术特工篇": "https://www.bilibili.com/video/BV13iohBEEPL/",
+}
+
 
 @dataclass(frozen=True)
 class WorkItem:
@@ -40,7 +53,9 @@ WORKS: list[WorkItem] = [
 ]
 
 
-def make_public_url(object_name: str) -> str:
+def make_public_url(title: str, object_name: str) -> str:
+    if title in BILIBILI_LINKS:
+        return BILIBILI_LINKS[title]
     if ASSET_BASE:
         return f"{ASSET_BASE.rstrip('/')}/{quote(object_name)}"
     return f"/videos/{quote(Path(object_name).name)}"
@@ -56,7 +71,7 @@ def make_poster_url(object_name: str) -> str:
 def main() -> None:
     items = []
     for index, work in enumerate(WORKS, start=1):
-        public_url = make_public_url(work.object_name)
+        public_url = make_public_url(work.title, work.object_name)
         items.append(
             {
                 "title": work.title,
