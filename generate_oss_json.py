@@ -7,6 +7,7 @@ from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import quote
+import requests
 
 REPO_DIR = Path(__file__).resolve().parent
 API_DIR = REPO_DIR / "api"
@@ -61,17 +62,33 @@ def make_public_url(title: str, object_name: str) -> str:
     return f"/videos/{quote(Path(object_name).name)}"
 
 
-def make_poster_url(object_name: str) -> str:
-    stem = Path(object_name).with_suffix(".jpg").name
-    if ASSET_BASE:
-        return f"{ASSET_BASE.rstrip('/')}/posters/{quote(stem)}"
-    return f"/posters/{quote(stem)}"
+def extract_bilibili_bvid(url: str) -> str:
+    marker = "/video/"
+    if marker in url:
+        tail = url.split(marker, 1)[1]
+        return tail.split("?")[0].strip("/")
+    return ""
+
+
+def fetch_bilibili_cover(url: str) -> str:
+    bvid = extract_bilibili_bvid(url)
+    if not bvid:
+        return ""
+    api_url = f"https://api.bilibili.com/x/web-interface/view?bvid={quote(bvid)}"
+    try:
+        resp = requests.get(api_url, timeout=10)
+        resp.raise_for_status()
+        data = resp.json()
+        return data.get("data", {}).get("pic", "") or ""
+    except Exception:
+        return ""
 
 
 def main() -> None:
     items = []
     for index, work in enumerate(WORKS, start=1):
         public_url = make_public_url(work.title, work.object_name)
+        poster_url = fetch_bilibili_cover(public_url) if work.title in BILIBILI_LINKS else ""
         items.append(
             {
                 "title": work.title,
@@ -83,7 +100,7 @@ def main() -> None:
                 "object_name": work.object_name,
                 "video": work.object_name,
                 "video_url": public_url,
-                "poster_url": make_poster_url(work.object_name),
+                "poster_url": poster_url,
                 "order": index,
             }
         )

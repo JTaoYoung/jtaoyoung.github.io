@@ -1,5 +1,5 @@
 {
-  "_refreshed_at": "2026-04-23T07:16:44.438310+00:00",
+  "_refreshed_at": "2026-04-23T07:21:09.890530+00:00",
   "_count": 10,
   "items": [
     {
@@ -12,7 +12,7 @@
       "object_name": "videos/imperial-reunion-night.m4v",
       "video": "videos/imperial-reunion-night.m4v",
       "video_url": "https://www.bilibili.com/video/BV1XEoeB4EsD/",
-      "poster_url": "https://JTaoYoung.github.io/posters/imperial-reunion-night.jpg",
+      "poster_url": "",
       "order": 1
     },
     {
@@ -25,7 +25,7 @@
       "object_name": "videos/mengniu-softmilk-ad.mp4",
       "video": "videos/mengniu-softmilk-ad.mp4",
       "video_url": "https://www.bilibili.com/video/BV1GEoeBtE7p/",
-      "poster_url": "https://JTaoYoung.github.io/posters/mengniu-softmilk-ad.jpg",
+      "poster_url": "",
       "order": 2
     },
     {
@@ -38,7 +38,7 @@
       "object_name": "videos/mengniu-softmilk-aigc-ad.mp4",
       "video": "videos/mengniu-softmilk-aigc-ad.mp4",
       "video_url": "https://www.bilibili.com/video/BV1giohBEEtR/",
-      "poster_url": "https://JTaoYoung.github.io/posters/mengniu-softmilk-aigc-ad.jpg",
+      "poster_url": "",
       "order": 3
     },
     {
@@ -51,7 +51,7 @@
       "object_name": "videos/mengniu-yg-milk-aigc-ad.mp4",
       "video": "videos/mengniu-yg-milk-aigc-ad.mp4",
       "video_url": "https://www.bilibili.com/video/BV1hiohBEE28/",
-      "poster_url": "https://JTaoYoung.github.io/posters/mengniu-yg-milk-aigc-ad.jpg",
+      "poster_url": "",
       "order": 4
     },
     {
@@ -64,7 +64,7 @@
       "object_name": "videos/renhe-clearing-capsule-aigc-ad.mp4",
       "video": "videos/renhe-clearing-capsule-aigc-ad.mp4",
       "video_url": "https://www.bilibili.com/video/BV13iohBEEhk/",
-      "poster_url": "https://JTaoYoung.github.io/posters/renhe-clearing-capsule-aigc-ad.jpg",
+      "poster_url": "",
       "order": 5
     },
     {
@@ -77,7 +77,7 @@
       "object_name": "videos/armani-beauty.mp4",
       "video": "videos/armani-beauty.mp4",
       "video_url": "https://www.bilibili.com/video/BV1QEoeB4EZM/",
-      "poster_url": "https://JTaoYoung.github.io/posters/armani-beauty.jpg",
+      "poster_url": "",
       "order": 6
     },
     {
@@ -90,7 +90,7 @@
       "object_name": "videos/ancient-martial-arts.mp4",
       "video": "videos/ancient-martial-arts.mp4",
       "video_url": "https://www.bilibili.com/video/BV1QEoeB4EnR/",
-      "poster_url": "https://JTaoYoung.github.io/posters/ancient-martial-arts.jpg",
+      "poster_url": "",
       "order": 7
     },
     {
@@ -103,7 +103,7 @@
       "object_name": "videos/sci-fi-action.mp4",
       "video": "videos/sci-fi-action.mp4",
       "video_url": "https://www.bilibili.com/video/BV1giohBEERB/",
-      "poster_url": "https://JTaoYoung.github.io/posters/sci-fi-action.jpg",
+      "poster_url": "",
       "order": 8
     },
     {
@@ -116,7 +116,7 @@
       "object_name": "videos/chanel-fashion.mp4",
       "video": "videos/chanel-fashion.mp4",
       "video_url": "https://www.bilibili.com/video/BV1XEoeB4Es6/",
-      "poster_url": "https://JTaoYoung.github.io/posters/chanel-fashion.jpg",
+      "poster_url": "",
       "order": 9
     },
     {
@@ -129,7 +129,7 @@
       "object_name": "videos/tactical-agent.mp4",
       "video": "videos/tactical-agent.mp4",
       "video_url": "https://www.bilibili.com/video/BV13iohBEEPL/",
-      "poster_url": "https://JTaoYoung.github.io/posters/tactical-agent.jpg",
+      "poster_url": "",
       "order": 10
     }
   ]
