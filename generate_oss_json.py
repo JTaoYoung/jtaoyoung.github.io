@@ -12,8 +12,7 @@ REPO_DIR = Path(__file__).resolve().parent
 API_DIR = REPO_DIR / "api"
 PORTFOLIO_FILE = API_DIR / "portfolio.json"
 
-BUCKET_NAME = os.getenv("OSS_BUCKET", "videos-aigc-cw")
-OSS_REGION = os.getenv("OSS_REGION", "oss-cn-shenzhen")
+ASSET_BASE = os.getenv("ASSET_BASE", "")
 
 
 @dataclass(frozen=True)
@@ -42,7 +41,9 @@ WORKS: list[WorkItem] = [
 
 
 def make_public_url(object_name: str) -> str:
-    return f"https://{BUCKET_NAME}.{OSS_REGION}.aliyuncs.com/{quote(object_name)}"
+    if ASSET_BASE:
+        return f"{ASSET_BASE.rstrip('/')}/{quote(object_name)}"
+    return f"./{quote(object_name)}"
 
 
 def main() -> None:
