@@ -215,7 +215,7 @@
         grid.innerHTML = filtered.map(item => `
           <article class="card" data-title="${item.title}">
             <div class="poster">
-              <video width="100%" preload="metadata" playsinline poster="${item.poster_url || ''}" muted loop>
+              <video width="100%" preload="metadata" playsinline poster="${item.cover_url || item.poster_url || ''}" muted loop>
                 <source src="${item.video_url || ''}" type="video/mp4">
                 您的浏览器不支持 HTML5 视频播放，请<a href="${item.video_url || ''}">下载视频</a>观看。
               </video>
@@ -275,7 +275,7 @@
           const poster = cards[0]?.querySelector('video');
           if (!poster || poster.dataset.posterFallbackApplied) return;
           poster.dataset.posterFallbackApplied = '1';
-          const currentPoster = item.poster_url || '';
+          const currentPoster = item.cover_url || item.poster_url || '';
           if (currentPoster) return;
           poster.addEventListener('loadeddata', () => {
             try {
