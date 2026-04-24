@@ -222,14 +222,12 @@
             </div>
             <div class="card-body">
               <div class="meta">
-                ${item.year ? `<span>${item.year}</span>` : ''}
-                ${item.duration ? `<span>${item.duration}</span>` : ''}
+                ${[item.year, item.duration].filter(Boolean).map(v => `<span>${v}</span>`).join('')}
               </div>
               <h4>${item.title}</h4>
               <p>${item.desc || ''}</p>
               <div class="tags">
-                ${item.category ? `<span class="tag">${item.category}</span>` : ''}
-                ${item.color ? `<span class="tag">${item.color}</span>` : ''}
+                ${[item.category, item.color].filter(Boolean).map(v => `<span class="tag">${v}</span>`).join('')}
               </div>
             </div>
           </article>
@@ -266,7 +264,8 @@
         if (!item?.video_url) return;
         player.src = item.video_url;
         playerTitle.textContent = item.title;
-        playerMeta.textContent = `${item.category} · ${item.year} · ${item.duration}`;
+        const metaParts = [item.category, item.year, item.duration].filter(Boolean);
+        playerMeta.textContent = metaParts.join(' · ');
         dialog.showModal();
         player.play().catch(() => {});
       }
