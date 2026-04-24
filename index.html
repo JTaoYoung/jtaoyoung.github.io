@@ -79,7 +79,6 @@
       .poster{aspect-ratio:4/5;position:relative;overflow:hidden;background:linear-gradient(135deg,#f9ead2,#fffdf8 52%,#cad7ff)}
       .poster video,.poster img{width:100%;height:100%;object-fit:cover;display:block}
       .poster video{pointer-events:none;}
-      .poster video{pointer-events:none;}
       .poster::before{content:"";position:absolute;inset:-18%;background:radial-gradient(circle at 28% 26%, rgba(255,255,255,.95), transparent 22%), radial-gradient(circle at 70% 40%, rgba(216,168,74,.42), transparent 18%), radial-gradient(circle at 50% 75%, rgba(0,0,0,.18), transparent 26%);filter:blur(2px);pointer-events:none}
       .poster::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, transparent 0%, rgba(255,255,255,.12) 38%, rgba(17,24,39,.62) 100%);pointer-events:none}
       .card:nth-child(3n+1) .poster{background:linear-gradient(160deg,#fff8ea,#f7dfaf 52%,#b9c9ff)}
@@ -100,7 +99,7 @@
       .player-head{display:flex;justify-content:space-between;gap:14px;align-items:start;margin-bottom:14px}
       .player-head h4{margin:0;font-size:24px}
       .player-stage{aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:#000;position:relative}
-      .player-stage video{width:100%;height:100%;display:block;background:#000}
+      .player-stage iframe{width:100%;height:100%;display:block;background:#000}
       .close{border:0;border-radius:12px;padding:10px 12px;background:#111827;color:#fff;cursor:pointer;position:relative;z-index:2}
       @media (max-width: 920px){.hero{grid-template-columns:1fr;padding-top:34px}.hero-visual{min-height:360px}.stats{grid-template-columns:1fr}.section-head{flex-direction:column;align-items:start}}
       @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.card{opacity:1;transform:none}}
@@ -181,7 +180,7 @@
         <button class="close" id="closeDialog" type="button">Close</button>
       </div>
       <div class="player-stage">
-        <video id="player" controls playsinline></video>
+        <iframe id="player" title="B站播放器" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen style="width:100%;height:100%;border:0;"></iframe>
       </div>
     </dialog>
 
@@ -243,7 +242,7 @@
           card.addEventListener('click', () => openPreview(item));
           io.observe(card);
           if (clip && item && item.video_url) {
-            clip.addEventListener('mouseenter', () => { clip.currentTime = 0; clip.play().catch(() => {}); });
+            clip.addEventListener('mouseenter', () => clip.play().catch(() => {}));
             clip.addEventListener('mouseleave', () => { clip.pause(); clip.currentTime = 0; });
           }
         });
@@ -251,15 +250,15 @@
 
       function openPreview(item) {
         if (!item?.video_url) return;
-        player.src = item.video_url;
+        const bvid = item.bvid || (item.video_url.match(/BV[0-9A-Za-z]+/) || [""])[0];
+        player.src = `https://player.bilibili.com/player.html?bvid=${bvid}&high_quality=1&autoplay=1&as_wide=1&danmaku=0`;
         playerTitle.textContent = item.title;
         playerMeta.textContent = `${item.category} · ${item.year} · ${item.duration}`;
         dialog.showModal();
-        player.play().catch(() => {});
       }
 
       document.getElementById('closeDialog').addEventListener('click', () => dialog.close());
-      dialog.addEventListener('close', () => { player.pause(); player.removeAttribute('src'); player.load(); });
+      dialog.addEventListener('close', () => { player.src = 'about:blank'; });
       dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
 
       async function loadData() {
