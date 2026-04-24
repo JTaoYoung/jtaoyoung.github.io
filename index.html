@@ -99,7 +99,7 @@
       .player-head{display:flex;justify-content:space-between;gap:14px;align-items:start;margin-bottom:14px}
       .player-head h4{margin:0;font-size:24px}
       .player-stage{aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:#000;position:relative}
-      .player-stage iframe{width:100%;height:100%;display:block;background:#000}
+      .player-stage video{width:100%;height:100%;display:block;background:#000}
       .close{border:0;border-radius:12px;padding:10px 12px;background:#111827;color:#fff;cursor:pointer;position:relative;z-index:2}
       @media (max-width: 920px){.hero{grid-template-columns:1fr;padding-top:34px}.hero-visual{min-height:360px}.stats{grid-template-columns:1fr}.section-head{flex-direction:column;align-items:start}}
       @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.card{opacity:1;transform:none}}
@@ -180,7 +180,7 @@
         <button class="close" id="closeDialog" type="button">Close</button>
       </div>
       <div class="player-stage">
-        <iframe id="player" title="B站播放器" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen style="width:100%;height:100%;border:0;"></iframe>
+        <video id="player" controls playsinline></video>
       </div>
     </dialog>
 
@@ -250,15 +250,15 @@
 
       function openPreview(item) {
         if (!item?.video_url) return;
-        const bvid = item.bvid || (item.video_url.match(/BV[0-9A-Za-z]+/) || [""])[0];
-        player.src = `https://player.bilibili.com/player.html?bvid=${bvid}&high_quality=1&autoplay=1&as_wide=1&danmaku=0`;
+        player.src = item.video_url;
         playerTitle.textContent = item.title;
         playerMeta.textContent = `${item.category} · ${item.year} · ${item.duration}`;
         dialog.showModal();
+        player.play().catch(() => {});
       }
 
       document.getElementById('closeDialog').addEventListener('click', () => dialog.close());
-      dialog.addEventListener('close', () => { player.src = 'about:blank'; });
+      dialog.addEventListener('close', () => { player.pause(); player.removeAttribute('src'); player.load(); });
       dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
 
       async function loadData() {
