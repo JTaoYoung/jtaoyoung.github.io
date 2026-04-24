@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CAIWEN · Portfolio</title>
+    <title>JTAO YOUNG · Portfolio</title>
     <meta name="description" content="Bright cinematic portfolio with dramatic lighting and filmic visuals." />
     <style>
       :root {
@@ -129,7 +129,7 @@
       <section class="hero">
         <div>
           <span class="eyebrow"><i class="dot"></i>Portfolio</span>
-          <h1>CAIWEN·AIGC作品集</h1>
+          <h1>CAIWEN AIGC作品集</h1>
           <p>广告片、个人创作、艺术视觉、创意动画。</p>
           <div class="actions">
             <a class="btn primary" href="#works">查看作品</a>
@@ -181,7 +181,7 @@
       </div>
     </dialog>
 
-    <footer class="wrap">CAIWEN · portfolio.</footer>
+    <footer class="wrap">JTAO YOUNG · portfolio.</footer>
 
     <script>
       const state = { category: 'All', items: [] };
@@ -215,18 +215,21 @@
         grid.innerHTML = filtered.map(item => `
           <article class="card" data-title="${item.title}">
             <div class="poster">
-              <video width="100%" preload="metadata" playsinline poster="${item.cover_url || item.poster_url || ''}" muted loop>
+              <video width="100%" preload="metadata" playsinline poster="${item.poster_url || ''}" muted loop>
                 <source src="${item.video_url || ''}" type="video/mp4">
                 您的浏览器不支持 HTML5 视频播放，请<a href="${item.video_url || ''}">下载视频</a>观看。
               </video>
             </div>
             <div class="card-body">
-              <div class="meta"><span>${item.year || ''}</span><span>${item.duration || ''}</span></div>
+              <div class="meta">
+                ${item.year ? `<span>${item.year}</span>` : ''}
+                ${item.duration ? `<span>${item.duration}</span>` : ''}
+              </div>
               <h4>${item.title}</h4>
               <p>${item.desc || ''}</p>
               <div class="tags">
-                <span class="tag">${item.category || ''}</span>
-                <span class="tag">${item.color || ''}</span>
+                ${item.category ? `<span class="tag">${item.category}</span>` : ''}
+                ${item.color ? `<span class="tag">${item.color}</span>` : ''}
               </div>
             </div>
           </article>
@@ -257,7 +260,6 @@
             });
           }
         });
-        applyPosterFallback(filtered);
       }
 
       function openPreview(item) {
@@ -267,26 +269,6 @@
         playerMeta.textContent = `${item.category} · ${item.year} · ${item.duration}`;
         dialog.showModal();
         player.play().catch(() => {});
-      }
-
-      function applyPosterFallback(items) {
-        items.forEach(item => {
-          const cards = Array.from(grid.querySelectorAll('.card')).filter(card => card.dataset.title === item.title);
-          const poster = cards[0]?.querySelector('video');
-          if (!poster || poster.dataset.posterFallbackApplied) return;
-          poster.dataset.posterFallbackApplied = '1';
-          const currentPoster = item.cover_url || item.poster_url || '';
-          if (currentPoster) return;
-          poster.addEventListener('loadeddata', () => {
-            try {
-              poster.pause();
-              poster.currentTime = 0;
-              poster.setAttribute('poster', poster.currentSrc || item.video_url || '');
-            } catch (error) {
-              console.debug('Poster fallback failed:', error);
-            }
-          }, { once: true });
-        });
       }
 
       document.getElementById('closeDialog').addEventListener('click', () => dialog.close());
