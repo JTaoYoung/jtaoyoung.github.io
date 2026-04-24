@@ -25,11 +25,20 @@
         radial-gradient(circle at 68% 78%, rgba(124,167,255,.24) 0%, transparent 26%),
         linear-gradient(135deg, #fffdf8 0%, #f4ebd6 46%, #fff8ed 100%);color:var(--text);overflow-x:hidden}
       body::before{content:"";position:fixed;inset:0;pointer-events:none;background:
-        radial-gradient(circle at 50% 0%, rgba(255,255,255,.9), transparent 30%),
-        linear-gradient(110deg, transparent 0 38%, rgba(255,255,255,.22) 45%, transparent 52%),
-        radial-gradient(circle at 20% 80%, rgba(0,0,0,.08), transparent 24%),
-        radial-gradient(circle at 82% 68%, rgba(0,0,0,.06), transparent 20%);
+        radial-gradient(circle at 50% 0%, rgba(255,255,255,.92), transparent 30%),
+        linear-gradient(110deg, transparent 0 38%, rgba(255,255,255,.20) 45%, transparent 52%),
+        radial-gradient(circle at 20% 80%, rgba(0,0,0,.06), transparent 24%),
+        radial-gradient(circle at 82% 68%, rgba(0,0,0,.05), transparent 20%);
         mix-blend-mode:multiply}
+      body::after{content:"";position:fixed;inset:-18% -18%;pointer-events:none;background:
+        radial-gradient(circle at 20% 20%, rgba(200,155,67,.16), transparent 28%),
+        radial-gradient(circle at 80% 12%, rgba(138,169,255,.12), transparent 24%),
+        radial-gradient(circle at 70% 78%, rgba(255,255,255,.22), transparent 20%);
+        filter: blur(24px); animation: drift 18s ease-in-out infinite alternate;}
+      @keyframes drift {
+        from { transform: translate3d(-1.5%, -1%, 0) scale(1); }
+        to { transform: translate3d(1.5%, 1%, 0) scale(1.04); }
+      }
       .wrap{width:min(1180px,calc(100% - 32px));margin:0 auto;position:relative}
       header{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);transition:.25s ease;border-bottom:1px solid transparent}
       header.scrolled{background:rgba(255,250,240,.72);border-bottom-color:var(--line);box-shadow:0 10px 30px rgba(0,0,0,.06)}
@@ -119,12 +128,11 @@
     <main class="wrap">
       <section class="hero">
         <div>
-          <span class="eyebrow"><i class="dot"></i>Bright cinematic portfolio</span>
-          <h1>画面明亮，却像电影一样有重量</h1>
-          <p>这是一个偏电影感的作品集主页：大面积高光、戏剧性阴影、带有金色阳光感的视觉层次，以及足够克制的内容呈现。适合摄影、导演、视觉设计、概念片与品牌影像展示。</p>
+          <span class="eyebrow"><i class="dot"></i>Selected Portfolio</span>
+          <h1>影像作品集</h1>
+          <p>展示你的品牌影像、AIGC 视频和个人创作。</p>
           <div class="actions">
-            <a class="btn primary" href="#works">View Works</a>
-            <a class="btn" href="#about">About</a>
+            <a class="btn primary" href="#works">查看作品</a>
           </div>
         </div>
         <div class="hero-visual" aria-hidden="true">
@@ -149,26 +157,15 @@
       <section class="section" id="works">
         <div class="section-head">
           <div>
-            <h3>Selected Works</h3>
-            <p>点击卡片可查看大图或播放视频。</p>
+            <h3>Works</h3>
+            <p>点击卡片查看视频。</p>
           </div>
           <div class="filters" id="filters"></div>
         </div>
         <div class="grid" id="grid"></div>
-        <div class="empty" id="empty" hidden>还没有内容，下面的示例数据可以直接替换成你的作品。</div>
+        <div class="empty" id="empty" hidden>暂无作品。</div>
       </section>
 
-      <section class="section" id="about">
-        <div class="section-head">
-          <div>
-            <h3>About</h3>
-            <p>明亮色调 + 电影级光影 + 极简叙事</p>
-          </div>
-        </div>
-        <div class="about">
-          <p style="margin:0;color:var(--muted);line-height:1.85">这个主页不依赖飞书，内容直接写入静态数据，适合快速上线到 GitHub Pages。结构包含首屏 Hero、数据统计、筛选作品网格、以及全屏播放器。你之后只需要把示例内容替换成自己的作品信息即可。</p>
-        </div>
-      </section>
     </main>
 
     <dialog id="playerDialog">
@@ -184,7 +181,7 @@
       </div>
     </dialog>
 
-    <footer class="wrap">JTAO YOUNG · bright cinematic portfolio.</footer>
+    <footer class="wrap">JTAO YOUNG · portfolio.</footer>
 
     <script>
       const state = { category: 'All', items: [] };
