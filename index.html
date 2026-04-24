@@ -242,8 +242,22 @@
           card.addEventListener('click', () => openPreview(item));
           io.observe(card);
           if (clip && item && item.video_url) {
-            clip.addEventListener('mouseenter', () => clip.play().catch(() => {}));
-            clip.addEventListener('mouseleave', () => { clip.pause(); clip.currentTime = 0; });
+            clip.muted = true;
+            clip.playsInline = true;
+            clip.preload = 'metadata';
+            clip.addEventListener('mouseenter', async () => {
+              try {
+                clip.muted = true;
+                clip.currentTime = 0;
+                await clip.play();
+              } catch (error) {
+                console.debug('Hover preview failed:', error);
+              }
+            });
+            clip.addEventListener('mouseleave', () => {
+              clip.pause();
+              clip.currentTime = 0;
+            });
           }
         });
       }
