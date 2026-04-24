@@ -148,11 +148,6 @@
         </div>
       </section>
 
-      <section class="stats" aria-label="Overview stats">
-        <div class="stat"><strong id="count">0</strong><span>精选作品</span></div>
-        <div class="stat"><strong id="cats">0</strong><span>作品分类</span></div>
-        <div class="stat"><strong id="updated">Now</strong><span>页面状态</span></div>
-      </section>
 
       <section class="section" id="works">
         <div class="section-head">
@@ -191,7 +186,6 @@
       const status = document.getElementById('status');
       const count = document.getElementById('count');
       const cats = document.getElementById('cats');
-      const updated = document.getElementById('updated');
       const header = document.getElementById('header');
       const dialog = document.getElementById('playerDialog');
       const player = document.getElementById('player');
@@ -211,7 +205,6 @@
         const filtered = state.category === 'All' ? state.items : state.items.filter(item => item.category === state.category);
         count.textContent = String(state.items.length);
         cats.textContent = String(Math.max(0, categories.length - 1));
-        updated.textContent = state.items.length ? 'Ready' : 'Waiting for JSON';
         grid.innerHTML = filtered.map(item => `
           <article class="card" data-title="${item.title}">
             <div class="poster">
@@ -283,7 +276,6 @@
           status.textContent = `Loaded ${state.items.length} videos`;
           count.textContent = String(state.items.length);
           cats.textContent = String(Math.max(0, categories.length - 1));
-          updated.textContent = data._refreshed_at ? new Date(data._refreshed_at).toLocaleString('zh-CN') : 'Ready';
           render();
         } catch (error) {
           console.error(error);
