@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JTAO YOUNG · Portfolio</title>
+    <title>CAIWEN · Portfolio</title>
     <meta name="description" content="Bright cinematic portfolio with dramatic lighting and filmic visuals." />
     <style>
       :root {
@@ -129,7 +129,7 @@
       <section class="hero">
         <div>
           <span class="eyebrow"><i class="dot"></i>Selected Portfolio</span>
-          <h1>CAIWEN AIGC作品集</h1>
+          <h1>CAIWEN·AIGC作品集</h1>
           <p>广告片、个人创作、艺术视觉、创意动画。</p>
           <div class="actions">
             <a class="btn primary" href="#works">查看作品</a>
@@ -181,7 +181,7 @@
       </div>
     </dialog>
 
-    <footer class="wrap">JTAO YOUNG · portfolio.</footer>
+    <footer class="wrap">CAIWEN · portfolio.</footer>
 
     <script>
       const state = { category: 'All', items: [] };
@@ -257,7 +257,8 @@
             });
           }
         });
-      }
+        applyPosterFallback(filtered);
+diandian      }
 
       function openPreview(item) {
         if (!item?.video_url) return;
@@ -266,6 +267,26 @@
         playerMeta.textContent = `${item.category} · ${item.year} · ${item.duration}`;
         dialog.showModal();
         player.play().catch(() => {});
+      }
+
+      function applyPosterFallback(items) {
+        items.forEach(item => {
+          const cards = Array.from(grid.querySelectorAll('.card')).filter(card => card.dataset.title === item.title);
+          const poster = cards[0]?.querySelector('video');
+          if (!poster || poster.dataset.posterFallbackApplied) return;
+          poster.dataset.posterFallbackApplied = '1';
+          const currentPoster = item.poster_url || '';
+          if (currentPoster) return;
+          poster.addEventListener('loadeddata', () => {
+            try {
+              poster.pause();
+              poster.currentTime = 0;
+              poster.setAttribute('poster', poster.currentSrc || item.video_url || '');
+            } catch (error) {
+              console.debug('Poster fallback failed:', error);
+            }
+          }, { once: true });
+        });
       }
 
       document.getElementById('closeDialog').addEventListener('click', () => dialog.close());
