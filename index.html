@@ -151,7 +151,6 @@
       <section class="stats" aria-label="Overview stats">
         <div class="stat"><strong id="count">0</strong><span>精选作品</span></div>
         <div class="stat"><strong id="cats">0</strong><span>作品分类</span></div>
-        <div class="stat"><strong id="updated">Now</strong><span>页面状态</span></div>
       </section>
 
       <section class="section" id="works">
@@ -191,7 +190,6 @@
       const status = document.getElementById('status');
       const count = document.getElementById('count');
       const cats = document.getElementById('cats');
-      const updated = document.getElementById('updated');
       const header = document.getElementById('header');
       const dialog = document.getElementById('playerDialog');
       const player = document.getElementById('player');
@@ -211,7 +209,6 @@
         const filtered = state.category === 'All' ? state.items : state.items.filter(item => item.category === state.category);
         count.textContent = String(state.items.length);
         cats.textContent = String(Math.max(0, categories.length - 1));
-        updated.textContent = state.items.length ? 'Ready' : 'Waiting for JSON';
         grid.innerHTML = filtered.map(item => `
           <article class="card" data-title="${item.title}">
             <div class="poster">
@@ -221,12 +218,14 @@
               </video>
             </div>
             <div class="card-body">
-              <div class="meta"><span>${item.year || ''}</span><span>${item.duration || ''}</span></div>
+              <div class="meta">
+                ${[item.year, item.duration].filter(Boolean).map(v => `<span>${v}</span>`).join('')}
+              </div>
               <h4>${item.title}</h4>
               <p>${item.desc || ''}</p>
               <div class="tags">
-                <span class="tag">${item.category || ''}</span>
-                <span class="tag">${item.color || ''}</span>
+                ${item.category ? `<span class="tag">${item.category}</span>` : ''}
+                ${item.color ? `<span class="tag">${item.color}</span>` : ''}
               </div>
             </div>
           </article>
@@ -263,7 +262,8 @@
         if (!item?.video_url) return;
         player.src = item.video_url;
         playerTitle.textContent = item.title;
-        playerMeta.textContent = `${item.category} · ${item.year} · ${item.duration}`;
+        const metaParts = [item.category, item.year, item.duration].filter(Boolean);
+        playerMeta.textContent = metaParts.join(' · ');
         dialog.showModal();
         player.play().catch(() => {});
       }
@@ -281,7 +281,6 @@
           status.textContent = `Loaded ${state.items.length} videos`;
           count.textContent = String(state.items.length);
           cats.textContent = String(Math.max(0, categories.length - 1));
-          updated.textContent = data._refreshed_at ? new Date(data._refreshed_at).toLocaleString('zh-CN') : 'Ready';
           render();
         } catch (error) {
           console.error(error);
