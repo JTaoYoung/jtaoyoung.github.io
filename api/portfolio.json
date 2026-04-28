@@ -1,5 +1,5 @@
 {
-  "_refreshed_at": "2026-04-28T03:38:29.519723+00:00",
+  "_refreshed_at": "2026-04-28T14:24:06.227339+00:00",
   "_count": 13,
   "items": [
     {
@@ -8,7 +8,7 @@
       "category": "AIGC参赛短片",
       "video_token": "Hoczbtul4otC8KxPcnRcDKIYnbf",
       "cover_token": "",
-      "video_url": "https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=YmI0NjZmNTRmZGI0N2VjNGU2ZWI5MjBhMTE2NDNkNjRfMTI2YjU5YTg0OGU5N2NmZDFlZTVkMGFlNDgyMjA2ZTBfSUQ6NzYzMjI1MTkyMzE0OTI0NTM3OF8xNzc3MzQ3NTA2OjE3Nzc0MzM5MDZfVjM",
+      "video_url": "https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=ODc2ZmMwZGMyMzE4YmQ1YjI1ODJiNDZmZjE3MjJmNzRfYmM1MGViNDA0YzFjZmUyYzAwNjMzMDU0ZTdhNjlkNWNfSUQ6NzYzMjI1MTkyMzE0OTI0NTM3OF8xNzc3Mzg2MjQ0OjE3Nzc0NzI2NDRfVjM",
       "cover_url": "",
       "order": 0
     },
@@ -18,7 +18,7 @@
       "category": "商业广告AIGC",
       "video_token": "DP7PbArJVoScP2xjswPcRgQUnBb",
       "cover_token": "",
-      "video_url": "https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=ZDFkYTkwNTljNWY5ZWUwN2I5ZWY4NDU0MThjN2Q4OTZfNWFlZmI4MGE3MTMwOGY0ZjYzNzJiMGUyNGY1ZGZmZDVfSUQ6NzYzMjIzMjUyNjY4MTIxNDE0OF8xNzc3MzQ3NTA2OjE3Nzc0MzM5MDZfVjM",
+      "video_url": "https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=YTNhMmI4OWY4MzZlNjZmY2Y3ZDRjZjU1MzFhMmY0YTZfOWMwZDljMzk5MDFlZTNiNzk5NGI2OTdkYzVlZTgzY2VfSUQ6NzYzMjIzMjUyNjY4MTIxNDE0OF8xNzc3Mzg2MjQ0OjE3Nzc0NzI2NDRfVjM",
       "cover_url": "",
       "order": 1
     },
@@ -28,7 +28,7 @@
       "category": "商业广告AIGC",
       "video_token": "T7ptboVXqoGge7xa4GAcktuonPh",
       "cover_token": "",
-      "video_url": "https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=M2MxNTEyOGY1NTk5NmI3OWY0MzNhYzBhZDVhODM5MDRfYTM0YzBiOTllY2M5Y2Y3ZWQ2ZmIxYjlmNGM3Mjc0YWZfSUQ6NzYzMjIzMjU1MDU5MzI4NTA2MV8xNzc3MzQ3NTA2OjE3Nzc0MzM5MDZfVjM",
+      "video_url": "https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=NmFkZTllZTBjZjhhZGIzYTNlZGRlOThhNWY4ZDQ0ODFfZGYwNmI5NThlNTViMzg0YjI1YTg0ZjFmNjgzMjVhYzBfSUQ6NzYzMjIzMjU1MDU5MzI4NTA2MV8xNzc3Mzg2MjQ0OjE3Nzc0NzI2NDRfVjM",
       "cover_url": "",
       "order": 2
     },
@@ -38,7 +38,7 @@
       "category": "商业广告AIGC",
       "video_token": "NNT0bqedcoU17kxQrSSceKs2nzh",
       "cover_token": "",
-      "video_url": "https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=Y2VhZGJiOWQ1NGEyNTk0ZDkzY2M3MmYxMzQ5ZGMyODJfZGQ3ZTA1ZDkyMmYzZDc5MjY5ZmU5MjhhNGIwZWUxNGRfSUQ6NzYzMjIzMjU2OTcxMTAzNzM4N18xNzc3MzQ3NTA2OjE3Nzc0MzM5MDZfVjM",
+      "video_url": "https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=NTEzNzczOWY3OTEzNWFjMTczYTllNzM0YjUzZTFhNzhfNjQ4MWE0NDgyOGM3MTA4MjI2NTQyZmI4MGNiMGYwMmZfSUQ6NzYzMjIzMjU2OTcxMTAzNzM4N18xNzc3Mzg2MjQ0OjE3Nzc0NzI2NDRfVjM",
       "cover_url": "",
       "order": 3
     },
@@ -48,7 +48,7 @@
       "category": "商业广告AIGC",
       "video_token": "ZhRKbX2o7ogZ62xhVW0cbEB9nvh",
       "cover_token": "",
-      "video_url": "https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=ZWIzNTNkYmQ1MDM0NWQ0NWQ1MWE1NzliNTQxOTVhYjJfYjc0ZWE0Y2U1MWQ2OTM4OWRjZmU4MTkxNDQ2NzM4OThfSUQ6NzYzMjIzMjU4NzczNzY4MTEwMV8xNzc3MzQ3NTA2OjE3Nzc0MzM5MDZfVjM",
+      "video_url": "https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=OWEyMjlkYjY1OGY3OWMxOWYxNDIxM2YzMmFkODM2ZWJfNmE4NTM3ZjlhOGE3YzA2MTY2MzhhYzc3NTM3NTQzMWRfSUQ6NzYzMjIzMjU4NzczNzY4MTEwMV8xNzc3Mzg2MjQ0OjE3Nzc0NzI2NDRfVjM",
       "cover_url": "",
       "order": 4
     },
@@ -58,7 +58,7 @@
       "category": "商业广告AIGC",
       "video_token": "BvnQbgVWMolX2GxyfJkc0r96nMd",
       "cover_token": "",
-      "video_url": "https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MmNlYWIzNGMzMjMyNmZiODA2NmFjMDI4YTA1OGYyNGRfY2M3MzQ0YjkxOTQwNDg3MzA3MWRhMTNhNWI2NTY4MWNfSUQ6NzYzMjIzMjYwMDc3MDYxMjE4Ml8xNzc3MzQ3NTA3OjE3Nzc0MzM5MDdfVjM",
+      "video_url": "https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=Y2RiNDg5OTkwNTJiYzkzN2FlNjc4MjJkZTY5MDk0MzBfOWM0OGNhODNmNzE2M2U2Zjc5OTkzYmRlNWNiMDM4YzBfSUQ6NzYzMjIzMjYwMDc3MDYxMjE4Ml8xNzc3Mzg2MjQ1OjE3Nzc0NzI2NDVfVjM",
       "cover_url": "",
       "order": 5
     },
@@ -68,7 +68,7 @@
       "category": "个人创作AIGC",
       "video_token": "SVtQbwa6IoHqEwxF81Wc3xbsnLu",
       "cover_token": "",
-      "video_url": "https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=YTQyOThhNzJjMWE2MGUwYjRkM2ZkNTU5MDcxYWQ0MTBfY2E1M2QyOTYxNTdmYzE5NjkzMTBkYmZjYjk2NjI5NWZfSUQ6NzYzMjIzMjYxODMzOTQ1NDE1Ml8xNzc3MzQ3NTA3OjE3Nzc0MzM5MDdfVjM",
+      "video_url": "https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=ZWY1YmU2NjFhNmFiMWNiYzkxNGYwMDlhY2MzNGE5OTdfMzA5MWExNzJhMWE3NGMzMjlmMWI4MTMzNmVlZTIwZWRfSUQ6NzYzMjIzMjYxODMzOTQ1NDE1Ml8xNzc3Mzg2MjQ1OjE3Nzc0NzI2NDVfVjM",
       "cover_url": "",
       "order": 6
     },
@@ -78,7 +78,7 @@
       "category": "个人创作AIGC",
       "video_token": "RW0sbqaXJouAAexX1pTcQrtGnTf",
       "cover_token": "",
-      "video_url": "https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MTBhZTA2Mjg1ZmRhOWQwN2Q0Y2Q2MmY2OGMwZWJmMDhfZjRlZGYwNzIxYWQ4NDM5NjA0OTM2NzBiZGQzNDA2ODBfSUQ6NzYzMjIzMjYzMzgzODQ3MjQxNl8xNzc3MzQ3NTA3OjE3Nzc0MzM5MDdfVjM",
+      "video_url": "https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=Y2FkNTEyZjFjZDBiMzFiODg5ZjlmZTU0YjZjZGUxMjdfMmQzZTBjOTc5NmI2MWQ1MGVmZmE3N2VkY2Y1NmU1ZWZfSUQ6NzYzMjIzMjYzMzgzODQ3MjQxNl8xNzc3Mzg2MjQ1OjE3Nzc0NzI2NDVfVjM",
       "cover_url": "",
       "order": 7
     },
@@ -88,7 +88,7 @@
       "category": "个人创作AIGC",
       "video_token": "QjFKbWSAWoK5izxm7OxcSWblnOb",
       "cover_token": "",
-      "video_url": "https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=ZWUxN2YwOGVjNmZkYWU0ZmU5ZmU1NzcxZGQyY2JmODFfZWY2N2E5MjQ3NmFkOGU5MmYzNTY2ODc2OThiMzZhYThfSUQ6NzYzMjIzMjY3MzYwNzkxMjY2MF8xNzc3MzQ3NTA3OjE3Nzc0MzM5MDdfVjM",
+      "video_url": "https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=ZTcxMmZkNGFlZmIyMDljMzE0MmNiMWMyZjJkYmRmNzBfMmYyNDM5YzM4OGJmNTExYmEyYjg3ZmFiOGYzZjAyZGZfSUQ6NzYzMjIzMjY3MzYwNzkxMjY2MF8xNzc3Mzg2MjQ1OjE3Nzc0NzI2NDVfVjM",
       "cover_url": "",
       "order": 8
     },
@@ -98,7 +98,7 @@
       "category": "个人创作AIGC",
       "video_token": "DVunbIrVKoyasEx5kZ2culCenKb",
       "cover_token": "",
-      "video_url": "https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MzI1MjQ0MjJmNDk5NjUwMTkxYjMyYmMxMjE4YjlmNGFfYTcwN2JkNGQ2MzBkMDZjYjRmYmNmNjkzZmE1NDllMjNfSUQ6NzYzMjIzMjY5MTkwMzQ1MDMxOV8xNzc3MzQ3NTA3OjE3Nzc0MzM5MDdfVjM",
+      "video_url": "https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=NzdiMDVjYjQ4MjQ0YThhZDhhZTIwZDQzYjJkMWVmODlfNGM4MTY2OWJmZDAwMmQwYmQyZTdkMGE3ZTdmZTFmNDBfSUQ6NzYzMjIzMjY5MTkwMzQ1MDMxOV8xNzc3Mzg2MjQ1OjE3Nzc0NzI2NDVfVjM",
       "cover_url": "",
       "order": 9
     },
@@ -108,7 +108,7 @@
       "category": "个人创作AIGC",
       "video_token": "HOreb4W62orKRQxumjXcxGfAnrh",
       "cover_token": "",
-      "video_url": "https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MDAxY2M2ZjA3OGMzM2I1ZWJiN2JiMDYxMjljZmRlYWVfYmU0MWNiN2Y1NTU5ZDZlYjU0MzRiNDhhYWU2YTYyMDdfSUQ6NzYzMjIzMjY5Nzc2NjkzOTg1M18xNzc3MzQ3NTA5OjE3Nzc0MzM5MDlfVjM",
+      "video_url": "https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MWJjZjIwMzc1OTc4YjU1ODNhMzc1ZjdlYzI5NjYwNDRfZGRhMTI1NzU2OGY2NDYzZDNkNjFiYWZiNjA3NDZjMzRfSUQ6NzYzMjIzMjY5Nzc2NjkzOTg1M18xNzc3Mzg2MjQ2OjE3Nzc0NzI2NDZfVjM",
       "cover_url": "",
       "order": 10
     },
@@ -118,8 +118,8 @@
       "category": "个人创作AIGC",
       "video_token": "CVOMb4iIeocQ4gxm8zBceaJDnWf",
       "cover_token": "MJNmbq3W3oltRZxY9cEcGa0UnJd",
-      "video_url": "https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=NTEwYjc5ODMzZDY3ZDJmNTAwOGE2YWM1NmZmODJhN2JfOGQyODhhOTM3MWU5ZjUyMDkzOTJiZGE2ZWZkMWE2OTJfSUQ6NzYzMjI1MjI3NTIwNTg4NTEyMl8xNzc3MzQ3NTA5OjE3Nzc0MzM5MDlfVjM",
-      "cover_url": "https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=N2E3NjRiZWNiZDQxNWY1Nzk1ZmEzNWM0ZDBkN2E0ODdfYTUxOTRjMGI3YjcwNmJmMGI0Yzc2Y2Q3MjNlOWE5MmZfSUQ6NzYzMjI2NjI1MzY4NzgzNTgyN18xNzc3MzQ3NTA5OjE3Nzc0MzM5MDlfVjM",
+      "video_url": "https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=ZTkwN2QzMThiNzc4Y2MyMDc4N2QxMjIyZDRlMDQzYzVfNjRiNDZhZjk2YWRlZmUwYjI5OWM5YzE0ODMwMDhiNDZfSUQ6NzYzMjI1MjI3NTIwNTg4NTEyMl8xNzc3Mzg2MjQ2OjE3Nzc0NzI2NDZfVjM",
+      "cover_url": "https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MThiYWQ4ZjEwMTg0NTllYmU0OTFkNThlY2Q3MjA1ZWZfYjFjYWUzNTA0Mzg4YjAxZWYwNWEyZTBhYjFlYmY3MTZfSUQ6NzYzMjI2NjI1MzY4NzgzNTgyN18xNzc3Mzg2MjQ2OjE3Nzc0NzI2NDZfVjM",
       "order": 11
     },
     {
@@ -128,8 +128,8 @@
       "category": "毕设作品",
       "video_token": "DIajbLhZOo0oYQxB4o1cVLhdnWd",
       "cover_token": "W7j7bw41Oo3TKTx3c8McKhPon6h",
-      "video_url": "https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=ZmVkNmZkNTA4N2MyMjU5YjRkYzEwNmU5NWJlNTIwNDZfYjhmNTg3MjkxNzBmNjUwNGY5Y2M5ZmI1OGEwNWUwNjlfSUQ6NzYzMjI1MjQyNzY1MTM3MDE3NF8xNzc3MzQ3NTA5OjE3Nzc0MzM5MDlfVjM",
-      "cover_url": "https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=NTRkMmY0Y2Y4Njg3ODk0OWUzNDQ4ZTEzM2JmNWM4NjJfMmQ0ZTE0OTRhNDdjMjljMTMwYmY0NGFmZjM4ZGJkMDJfSUQ6NzYzMjI2NjUyMzQ2OTcyODk5M18xNzc3MzQ3NTA5OjE3Nzc0MzM5MDlfVjM",
+      "video_url": "https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=YTkyZGEyYWJlNmY5YWZjMzg4NzU0MzU1NzI4YWU5Y2VfYzNkM2FjYTVjNWY3M2U3MGY0YjViNTRmOThiYTczNjZfSUQ6NzYzMjI1MjQyNzY1MTM3MDE3NF8xNzc3Mzg2MjQ2OjE3Nzc0NzI2NDZfVjM",
+      "cover_url": "https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=Njk5MGNjMTkwYjYxYzFiZDQ5NTUwZjdmZmNhMWM4MjVfNGYzM2EwMGRmMjA5N2U1OTFmOWI4MDMyZmI4MDA3ZmNfSUQ6NzYzMjI2NjUyMzQ2OTcyODk5M18xNzc3Mzg2MjQ2OjE3Nzc0NzI2NDZfVjM",
       "order": 12
     }
   ]
